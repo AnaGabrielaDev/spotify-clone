@@ -29,10 +29,12 @@ Instale as dependências
 Inicie o servidor
 
 ```bash
-  npm run start || npm run dev
+  npm run dev
 ```
 
 ## Entre em sua branch
+
+``git checkout [suaRespectivaBranch]``
 
 | Branchs 
 |--- |
