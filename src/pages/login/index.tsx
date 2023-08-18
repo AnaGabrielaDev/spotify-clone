@@ -1,10 +1,9 @@
 import { Header } from "../../components/Header";
 
-export function Home() {
+export function Login() {
     return (
         <Header.HeaderWrapper>
-            <Header.Logo/>
-            <Header.Navigation />
+            <Header.Logo className=""/>
         </Header.HeaderWrapper>
     )
 }
