@@ -43,20 +43,23 @@ Inicie o servidor
 
 ## Enviando os codigos
 
-Estando em sua branch, quando quiser enviar, busque as alteracoes com:
+Estando em sua branch, quando quiser enviar as alteraçoes, busque as alteracoes remotar primeiro com:
+
 ``git fetch`` - busca as alteracoes remotas 
 
-``git pull origin main`` - atualiza o seu codigo local com o codigo que esta na branch principal
+``git rebase origin/main`` - atualiza o seu codigo local com o codigo que esta na branch principal
 
 ``git push`` - apos enviar os commits para stage e de definir
 a mensagem do comit, rode o push para enviar suas alteracoes
 
-#### apos enviar, voce precisa abrir o repositorio no github e clicar em "compare and pull request" para abrir um pull request e colocar "AnaGabrielaDev" como reviewr.
+#### apos enviar, me avisem para que eu valide e abra o pull request e assim, suas alteracoes virem para o codigo da main. 
+
+Boa sorte a todos! :) 
 ## Autores
 
 - 
 
 
-## 🛠 Stach
+## 🛠 Stack
 Typescript, React, TailwindCss...
 
