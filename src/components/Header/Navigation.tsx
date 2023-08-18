@@ -8,7 +8,9 @@ export function Navigation() {
                 <li className="font-bold hover:text-green-500">Suporte</li>
                 <li className="font-bold hover:text-green-500">Baixar</li>
                 <li>|</li>
-                <li className="hover:text-green-500">Inscrever-se</li>
+                <Link to="/signUp" replace={true}>
+                    <li className="hover:text-green-500">Inscrever-se</li>
+                </Link>
                 <Link to="/login" replace={true}>
                     <li className="hover:text-green-500">Entrar</li>
                 </Link>
