@@ -5,7 +5,9 @@ export function Navigation() {
         <nav className="flex items-center mr-8 text-base">
             <ul className="flex gap-9">
                 <li className="font-bold hover:text-green-500">Premium</li>
-                <li className="font-bold hover:text-green-500">Suporte</li>
+                <Link to="/faq" replace={true}>
+                    <li className="font-bold hover:text-green-500">Suporte</li>
+                </Link>
                 <li className="font-bold hover:text-green-500">Baixar</li>
                 <li>|</li>
                 <Link to="/signUp" replace={true}>
