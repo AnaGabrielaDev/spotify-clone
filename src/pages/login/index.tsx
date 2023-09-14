@@ -1,9 +1,12 @@
 import { Header } from "../../components/Header";
+import { Logo } from "../../components/Logo";
 
 export function Login() {
     return (
-        <Header.HeaderWrapper>
-            <Header.Logo className=""/>
-        </Header.HeaderWrapper>
+        <>
+            <Header.HeaderWrapper>
+                <Logo />
+            </Header.HeaderWrapper>
+        </>
     )
 }

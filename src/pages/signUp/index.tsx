@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export function SignUp() {
     const [proceed, setProceed] = useState<boolean>(true);
-    const [userData, setUserData] = useState<String[]>([]);
+    const [userData, setUserData] = useState<string[]>([]);
     const favorites: string[] = [];
     const genres = ["Jazz", "Pop", "Rock", "Funk", "MPB", "Sertanejo", "K-Pop", "Grunge", "Heavy Metal", "Hard Rock", "Gospel", "Rap", "Trap", "Hip Hop", "Samba", "Pagode", "Forró", "Eletrônica"];
     type User = {
@@ -85,6 +85,5 @@ export function SignUp() {
                 </Form.FormWrapper>
             }
         </div>
-
     )
 }

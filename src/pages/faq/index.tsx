@@ -1,4 +1,5 @@
 import { Header } from '../../components/Header';
+import { Logo } from '../../components/Logo';
 import Question from '../../components/Question';
 import Modal from '../../components/Question/modal';
 
@@ -44,7 +45,7 @@ export function Faq(){
   return (
     <>
     <Header.HeaderWrapper>
-          <Header.Logo/>
+          <Logo />
           <Header.Navigation />
       </Header.HeaderWrapper>
       <div className='h-full min-h-screen pt-8 bg-gradient-to-tl from-green-950 to-green-500'>
