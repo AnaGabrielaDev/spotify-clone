@@ -4,7 +4,7 @@ import { Logo } from "../../components/Logo";
 import Question from "../../components/Question";
 import Modal from "../../components/Question/modal";
 
-const questionPayments = (
+const anwserPayments = (
   <>
     <ul className="list-disc">
       <li>Cartão de crédito/débito</li>
@@ -61,6 +61,26 @@ const answerAlexa = (
     </p>
   </>
 );
+
+const questions = [
+  {
+    title: "O que é o Spotify?",
+    answer: "O Spotify é um serviço de streaming de música, podcast e vídeo digital que oferece acesso a milhões de músicas e outros conteúdos de artistas de todo o mundo."
+  },
+  {
+    title: "Formas de pagamento",
+    answer: anwserPayments
+  },
+  {
+    title:"Não lembro minhas informações de login",
+    answer: answerForgotPassword
+  },
+  {
+    title:"Vincular o Spotify à Alexa",
+    answer: answerAlexa
+  }
+]
+
 export function Faq() {
   return (
     <>
@@ -72,22 +92,12 @@ export function Faq() {
       </Header.HeaderWrapper>
       <div className="h-full min-h-screen pt-8 bg-gradient-to-tl from-green-950 to-green-500">
         <Modal>
-          <Question
-            question="O que é o Spotify?"
-            answer="O Spotify é um serviço de streaming de música, podcast e vídeo digital que oferece acesso a milhões de músicas e outros conteúdos de artistas de todo o mundo."
-          ></Question>
-          <Question
-            question="Formas de pagamento"
-            answer={questionPayments}
-          ></Question>
-          <Question
-            question="Não lembro minhas informações de login"
-            answer={answerForgotPassword}
-          ></Question>
-          <Question
-            question="Vincular o Spotify à Alexa"
-            answer={answerAlexa}
-          ></Question>
+          {questions.map(question => (
+            <Question 
+              question={question.title}
+              answer={question.answer}
+            />
+          ))}
         </Modal>
       </div>
     </>
