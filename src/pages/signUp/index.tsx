@@ -1,6 +1,8 @@
 import { Header } from "../../components/Header";
 import { Form } from "../../components/Form";
 import { useState } from "react";
+import { Logo } from "../../components/Logo";
+import { Link } from "react-router-dom";
 
 export function SignUp() {
     const [proceed, setProceed] = useState<boolean>(true);
@@ -51,7 +53,9 @@ export function SignUp() {
     return (
         <div className="bg-gradient-to-tl from-green-950 to-green-500 h-screen text-white">
             <Header.HeaderWrapper>
-                <Header.Logo className="" />
+                <Link to="/">
+                    <Logo />            
+                </Link>
             </Header.HeaderWrapper>
             {proceed ?
                 <Form.FormWrapper handleSubmit={() => createUser}>
@@ -71,8 +75,7 @@ export function SignUp() {
                         <hr className="my-2" />
                         <label>Vamos conhecer mais sobre seu gosto musical!<br /></label>
                         {genres.map((genre: string) => (
-                            <button className={`mx-1 px-1 my-3 border-2 border-green-500 hover:bg-green-500 hover:text-white rounded-lg focus:bg-green-500`} type="button" onClick={() => updateFavorites(genre)}>{genre}</button>
-
+                            <button key={genre} className={`mx-1 px-1 my-3 border-2 border-green-500 hover:bg-green-500 hover:text-white rounded-lg focus:bg-green-500`} type="button" onClick={() => updateFavorites(genre)}>{genre}</button>
                         ))}
 
                         <hr className="my-2" />
