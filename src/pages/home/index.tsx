@@ -17,6 +17,7 @@ import a12 from "./images/a12.png"
 
 import { Card } from "../../components/Card";
 import { AiFillHome, AiFillWechat, AiOutlineSearch } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 
 export function Home() {
@@ -43,12 +44,12 @@ export function Home() {
             <div className="outer-div">
             <div className="left">
                 <div className="navbar box">
-                    <a href="#">
+                    <Link to="/">
                         <p className="flex gap-2"><AiFillHome /> Início</p>
-                    </a>
-                    <a href="./faq.html">
+                    </Link>
+                    <Link to="/faq">
                         <p className="flex gap-2"><AiFillWechat />FAQ</p>
-                    </a>
+                    </Link>
                     <a href="https://open.spotify.com/intl-pt?">
                         <p className="flex gap-2"><AiOutlineSearch />Buscar</p>
                     </a>
