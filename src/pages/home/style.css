@@ -1,0 +1,183 @@
+body {
+    overflow-y: hidden;
+}
+
+.outer-div {
+    background-color: #000000;
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    width: 20%;
+    padding-right: .1em;
+    padding-left: .1em;
+    height: 94.4%;
+}
+
+.right {
+    width: 80%;
+    height: 95%;
+}
+
+.navbar {
+    height: 20%;
+}
+
+.navbar img {
+    width: 32px;
+    padding-right: 30px;
+}
+
+.user {
+    height: 80%;
+}
+
+.user h4 {
+    color: #a3a3a3;
+    padding-left: 10px;
+}
+
+.user h4:hover {
+    color: #cecece;
+}
+
+.user-list li {
+    list-style-type: none;
+    margin: 1em 0;
+    padding-left: 1em;
+    border-left: 1px solid #f0f8ff;
+}
+
+.box {
+    color: white;
+    background-color: #121212;
+    border-radius: 20px;
+    padding: .3em;
+    margin: .3em;
+}
+
+.home {
+    padding-top: 2em;
+    height: max-content;
+}
+
+.login {
+    display: flex;
+    gap: 1em;
+    justify-content: flex-end;
+    margin-right: 1em;
+}
+
+.playlists {
+    background-color: #1e1e1e;
+    height: max-content;
+    border-radius: 10px;
+    padding: .5em;
+    padding-bottom: 4em;
+    margin-bottom: 1em;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+.form {
+    display: block;
+    background-color: #121212;
+    border-radius: 15px;
+    padding: .5em;
+}
+
+.form h1,
+.form h2,
+.form h3,
+.form h4,
+.form h5,
+.form h6,
+.form label {
+    font-size: 2em;
+}
+
+.form input {
+    margin: auto;
+    width: 300px;
+    height: 30px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form button {
+    width: 300px;
+    height: 30px;
+    background-color: #121212;
+    border: 1px solid #f0f8ff;
+    color: #f0f8ff;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.covers {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin: 6px;
+}
+
+.covers img {
+    width: 100%;
+}
+
+.name-inputs {
+    display: flex;
+}
+
+.name-inputs input {
+    width: fit-content;
+}
+
+.checkbox-input {
+    display: inline-block;
+}
+
+.checkbox-input div {
+    display: flex;
+}
+
+.checkbox-input input {
+    width: fit-content;
+    margin: 12px;
+}
+
+#first-name {
+    margin-right: 0;
+}
+
+#last-name {
+    margin-left: 0;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: #f0f8ff;
+}
+
+a:hover {
+    transition: .5s;
+    color: #5fb763;
+}
