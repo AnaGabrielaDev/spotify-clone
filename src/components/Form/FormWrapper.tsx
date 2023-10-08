@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge"
 interface FormWrapperInterface {
     classNameProps?: HTMLHeadingElement,
     children: ReactNode,
-    handleSubmit: () => void
+    handleSubmit: (ev: React.SyntheticEvent) => void
 }
 
 function FormWrapper({children, classNameProps, handleSubmit}: FormWrapperInterface) {
