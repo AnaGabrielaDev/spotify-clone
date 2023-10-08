@@ -1,27 +1,67 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Spotify clone
 
-Currently, two official plugins are available:
+Um projeto desenvolvido com fins educacionais, proposto pela disciplina de desenvolvimento web - unifor, 2023.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Rodando localmente
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+Clone o projeto
+
+```bash
+  git clone https://github.com/AnaGabrielaDev/spotify-clone.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Entre no diretório do projeto
+
+```bash
+  cd spotify-clone
+```
+
+Instale as dependências
+
+```bash
+  npm install
+```
+
+Inicie o servidor
+
+```bash
+  npm run dev
+```
+
+## Entre em sua branch
+
+``git checkout [suaRespectivaBranch]``
+
+| Branchs 
+|--- |
+| pages/sign-up
+| pages/login 
+| pages/home
+| pages/faq
+
+## Enviando os codigos
+
+Estando em sua branch, quando quiser enviar as alteraçoes, busque as alteracoes remotar primeiro com:
+
+``git fetch`` - busca as alteracoes remotas 
+
+``git rebase origin/main`` - atualiza o seu codigo local com o codigo que esta na branch principal
+
+``git push`` - apos enviar os commits para stage e de definir
+a mensagem do comit, rode o push para enviar suas alteracoes
+
+#### apos enviar, me avisem para que eu valide e abra o pull request e assim, suas alteracoes virem para o codigo da main. 
+
+Boa sorte a todos! :) 
+## Autores
+
+- 
+
+
+## 🛠 Stack
+Typescript, React, TailwindCss...
+

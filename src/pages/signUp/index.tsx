@@ -2,13 +2,17 @@ import { Header } from "../../components/Header";
 import { Form } from "../../components/Form";
 import { useState } from "react";
 import { Logo } from "../../components/Logo";
+
 import { Link, useNavigate } from "react-router-dom";
 import Message from "../../components/Message/Message";
+
 
 export function SignUp() {
     const [proceed, setProceed] = useState<boolean>(true);
     const [userData, setUserData] = useState<string[]>([]);
+
     const nav = useNavigate();
+
     const favorites: string[] = [];
     const [message, setMessage] = useState<string>();
     const [type, setType] = useState<string>('error');
@@ -78,6 +82,7 @@ export function SignUp() {
             <Header.HeaderWrapper>
                 <Link to="/">
                     <Logo />
+
                 </Link>
             </Header.HeaderWrapper>
             {message && <Message type={type} text={message}/>}
