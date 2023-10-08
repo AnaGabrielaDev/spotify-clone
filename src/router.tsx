@@ -1,5 +1,6 @@
-import { Faq, Home, Login, SignUp } from "./pages";
+import { Faq, Home, Login, SignUp, } from "./pages";
 import { createBrowserRouter } from "react-router-dom";
+import Player from "./pages/player";
 
 export const router = createBrowserRouter([
   {
@@ -18,4 +19,8 @@ export const router = createBrowserRouter([
     path: "/faq",
     element: <Faq/>,
   },
+  {
+    path: "/player",
+    element: <Player/>
+  }
 ]);
