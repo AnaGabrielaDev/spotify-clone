@@ -43,7 +43,7 @@ export function Home() {
             <div className="right box">
                 <div className="covers">
                     {playlists.map(p => (
-                        <Link to="/playlists/p.id">
+                        <Link to={`/player/${p.id}`}>
                         <Card key={p.id} img={p.capa} title={p.titulo} />
                         </Link>
                     ))}
