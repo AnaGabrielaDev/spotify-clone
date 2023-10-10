@@ -16,13 +16,18 @@ interface MusicItem {
 
 export default function Player() {
   const [selectedMusic, setSelectedMusic] = useState<MusicItem | null>(null);
+  const [audio, setAudio] = useState(new Audio());
 
-  const handleMusicClick = (musica: MusicItem) => {
-    if (selectedMusic === musica) {
+  const handleMusicClick = (music: MusicItem) => {
+    if (selectedMusic === music) {
       setSelectedMusic(null);
+      audio.pause();
     } else {
-      setSelectedMusic(musica);
+      setSelectedMusic(music);
+      audio.src = music.arquivo;
+      audio.play();
     }
+    setAudio(audio);
   };
 
   const { id } = useParams();

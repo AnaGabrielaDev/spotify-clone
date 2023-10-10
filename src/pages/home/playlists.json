@@ -1,46 +1,46 @@
 [
     {
-    "id": 1,
-    "titulo": "Intense Studying",
-    "capa": "/img/intense_studying.jpg",
-    "descricao": "Get. It. Done. Focus-enhancing piano music to keep you motivated during your study session.",
-    "musicas": [
-        {
-            "id": 1,
-            "nome": "Penumbra",
-            "artista": "Davignon",
-            "capa": "/img-music/playlist_1/penumbra.png",
-            "arquivo": "/music/penumbra.mp3"
-        },
-        {
-            "id": 2,
-            "nome": "June",
-            "artista": "André Dívou",
-            "capa": "/img-music/playlist_1/june.jpg",
-            "arquivo": "/music/june.mp3"
-        },
-        {
-            "id": 3,
-            "nome": "Stratus",
-            "artista": "Zoran Tudor",
-            "capa": "/img-music/playlist_1/stratus.jpg",
-            "arquivo": "/music/stratus.mp3"
-        },
-        {
-            "id": 4,
-            "nome": "No Goodbye",
-            "artista": "Jule Dubois",
-            "capa": "/img-music/playlist_1/no_goodbye.png",
-            "arquivo": "/music/no_goodbye.mp3"
-        },
-        {
-            "id": 5,
-            "nome": "Chacoaled Walls",
-            "artista": "Jean-Marie Bussiere",
-            "capa": "img-music/playlist_1/charcoaled_walls.jpg",
-            "arquivo": "/music/charcoaled_walls.mp3"
-        }
-    ]
+        "id": 1,
+        "titulo": "Intense Studying",
+        "capa": "/img/intense_studying.jpg",
+        "descricao": "Get. It. Done. Focus-enhancing piano music to keep you motivated during your study session.",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "Penumbra",
+                "artista": "Davignon",
+                "capa": "/img-music/playlist_1/penumbra.png",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "June",
+                "artista": "André Dívou",
+                "capa": "/img-music/playlist_1/june.jpg",
+                "arquivo": "/music/june.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "Stratus",
+                "artista": "Zoran Tudor",
+                "capa": "/img-music/playlist_1/stratus.jpg",
+                "arquivo": "/music/stratus.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "No Goodbye",
+                "artista": "Jule Dubois",
+                "capa": "/img-music/playlist_1/no_goodbye.png",
+                "arquivo": "/music/no_goodbye.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "Chacoaled Walls",
+                "artista": "Jean-Marie Bussiere",
+                "capa": "img-music/playlist_1/charcoaled_walls.jpg",
+                "arquivo": "/music/charcoaled_walls.mp3"
+            }
+        ]
     },
     {
         "id": 2,
@@ -60,28 +60,28 @@
                 "nome": "Traveling Day",
                 "artista": "Arta Porting",
                 "capa": "/img-music/playlist_2/traveling_day.jpg",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "/music/charcoaled_walls.mp3"
             },
             {
                 "id": 3,
                 "nome": "A Bite-Sized Romance",
                 "artista": "6th Street Jazz",
                 "capa": "/img-music/playlist_2/a_bite-sized_romance.jpg",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "/music/no_goodbye.mp3"
             },
             {
                 "id": 4,
                 "nome": "Twenty Somethings",
                 "artista": "The Central Park North",
                 "capa": "/img-music/playlist_2/twenty_somethings.jpg",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "/music/stratus.mp3"
             },
             {
                 "id": 5,
                 "nome": "Sunset Stroll",
                 "artista": "Urban Jazz Junction",
                 "capa": "img-music/playlist_2/sunset_stroll.png",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "/music/music1.mp3"
             }
         ]
     },
@@ -103,28 +103,28 @@
                 "nome": "Project X",
                 "artista": "Charley Hewits",
                 "capa": "/img-music/playlist_3/project_x.jpg",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "/music/stratus.mp3"
             },
             {
                 "id": 3,
                 "nome": "Onimous",
                 "artista": "Fadez N Rizer",
                 "capa": "/img-music/playlist_3/onimous.jpg",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "/music/no_goodbye.mp3"
             },
             {
                 "id": 4,
                 "nome": "when in darkness",
                 "artista": "Ex0Core",
                 "capa": "/img-music/playlist_3/when_in_darkness.png",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "/music/june.mp3"
             },
             {
                 "id": 5,
                 "nome": "Friction",
                 "artista": "Dylan Sitts",
                 "capa": "img-music/playlist_3/friction.jpg",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "/music/charcoaled_walls.mp3"
             }
         ]
     },
@@ -139,14 +139,14 @@
                 "nome": "Augury",
                 "artista": "Lynx XII",
                 "capa": "/img-music/playlist_4/augury.jpg",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "/music/no_goodbye.mp3"
             },
             {
                 "id": 2,
                 "nome": "Orange Sky",
                 "artista": "Auðura",
                 "capa": "/img-music/playlist_4/orange_sky.jpg",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "/music/june.mp3"
             },
             {
                 "id": 3,
@@ -318,7 +318,7 @@
                 "nome": "Summmmer Forest",
                 "artista": "Nature Recordings",
                 "capa": "/img-music/playlist_8/summmmer_forest.jpg",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "../../src/assets/music1.mp3"
             },
             {
                 "id": 3,
@@ -332,7 +332,7 @@
                 "nome": "Soothing Rain",
                 "artista": "Nuwan",
                 "capa": "/img-music/playlist_8/soothing_rain.jpg",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "src/assets/music1.mp3"
             },
             {
                 "id": 5,
@@ -361,7 +361,7 @@
                 "nome": "Magic Island",
                 "artista": "Matobolo",
                 "capa": "/img-music/playlist_9/magic_island.jpg",
-                "arquivo": "/music/penumbra.mp3"
+                "arquivo": "src/assets/music1.mp3"
             },
             {
                 "id": 3,
