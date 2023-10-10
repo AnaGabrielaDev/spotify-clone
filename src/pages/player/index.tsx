@@ -23,9 +23,10 @@ export default function Player() {
       setSelectedMusic(null);
       audio.pause();
     } else {
+      setSelectedMusic(null);
+      audio.pause();
       setSelectedMusic(music);
       audio.src = music.arquivo;
-      audio.play();
     }
     setAudio(audio);
   };
