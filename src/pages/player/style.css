@@ -28,7 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  min-width: 100vh;
+  min-width: 100%;
   flex: 1;
   background: linear-gradient(rgb(43, 43, 43), rgb(87, 87, 87));
   padding: 20px;
