@@ -17,6 +17,10 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
   useEffect(() => {
     const audio = audioRef.current;
 
+    audio.src = musicUrl;
+    audio.play();
+    setIsPlaying(true);
+
     const handleTimeUpdate = () => {
       setCurrentTime(audio.currentTime);
     };
@@ -26,7 +30,7 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
     return () => {
       audio.removeEventListener('timeupdate', handleTimeUpdate);
     };
-  }, []);
+  }, [musicUrl]); // Adicione musicUrl como dependência
 
   
   const play = () => {
@@ -60,7 +64,7 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
   };
   
   return (
-    <div className="w-screen h-screen bottom-0 absolute">
+    <div className="w-screen h-screen bottom-0">
       <div className="bg-zinc-900 w-full absolute bottom-0 flex flex-col">
         <input className="range accent-green-500" type="range" min="0" max={audioRef.current.duration} value={currentTime} onChange={handleTimeSliderChange} />
         <div className="items-center grid grid-cols-3">

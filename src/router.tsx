@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
     element: <Faq/>,
   },
   {
-    path: "/player",
+    path: "/player/:id",
     element: <Player/>
   }
 ]);

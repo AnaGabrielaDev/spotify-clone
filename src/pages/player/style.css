@@ -22,3 +22,74 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100%;
+  flex: 1;
+  background: linear-gradient(rgb(43, 43, 43), rgb(87, 87, 87));
+  padding: 20px;
+  border-radius: 0;
+}
+
+
+.left-box-p {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right-box {
+  flex: 1;
+  padding: 20px;
+}
+
+.playlist-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.playlist-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.playlist-description {
+  font-size: 18px;
+  margin-top: 10px;
+  max-width: 300px;
+}
+
+.song-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.song-item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.song-number {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.song-name {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.song-author {
+  font-size: 16px;
+  color: #8b8b8b;
+}

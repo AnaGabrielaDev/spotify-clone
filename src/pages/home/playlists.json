@@ -1,0 +1,518 @@
+[
+    {
+        "id": 1,
+        "titulo": "Intense Studying",
+        "capa": "/img/intense_studying.jpg",
+        "descricao": "Get. It. Done. Focus-enhancing piano music to keep you motivated during your study session.",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "Penumbra",
+                "artista": "Davignon",
+                "capa": "/img-music/playlist_1/penumbra.png",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "June",
+                "artista": "André Dívou",
+                "capa": "/img-music/playlist_1/june.jpg",
+                "arquivo": "/music/june.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "Stratus",
+                "artista": "Zoran Tudor",
+                "capa": "/img-music/playlist_1/stratus.jpg",
+                "arquivo": "/music/stratus.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "No Goodbye",
+                "artista": "Jule Dubois",
+                "capa": "/img-music/playlist_1/no_goodbye.png",
+                "arquivo": "/music/no_goodbye.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "Chacoaled Walls",
+                "artista": "Jean-Marie Bussiere",
+                "capa": "img-music/playlist_1/charcoaled_walls.jpg",
+                "arquivo": "/music/charcoaled_walls.mp3"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "titulo": "Jazz for Study",
+        "capa": "/img/jazz_for_study.jpg",
+        "descricao": "Find your study focus with calm instrumental Jazz.",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "Breathe the Air",
+                "artista": "Glass Trio",
+                "capa": "/img-music/playlist_2/breathe_the_air.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "Traveling Day",
+                "artista": "Arta Porting",
+                "capa": "/img-music/playlist_2/traveling_day.jpg",
+                "arquivo": "/music/charcoaled_walls.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "A Bite-Sized Romance",
+                "artista": "6th Street Jazz",
+                "capa": "/img-music/playlist_2/a_bite-sized_romance.jpg",
+                "arquivo": "/music/no_goodbye.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "Twenty Somethings",
+                "artista": "The Central Park North",
+                "capa": "/img-music/playlist_2/twenty_somethings.jpg",
+                "arquivo": "/music/stratus.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "Sunset Stroll",
+                "artista": "Urban Jazz Junction",
+                "capa": "img-music/playlist_2/sunset_stroll.png",
+                "arquivo": "/music/music1.mp3"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "titulo": "All-Nighter",
+        "capa": "/img/all-nighter.jpg",
+        "descricao": "Stay focused with electronic and trap beats.",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "hitman",
+                "artista": "JayDottCee",
+                "capa": "/img-music/playlist_3/hitman.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "Project X",
+                "artista": "Charley Hewits",
+                "capa": "/img-music/playlist_3/project_x.jpg",
+                "arquivo": "/music/stratus.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "Onimous",
+                "artista": "Fadez N Rizer",
+                "capa": "/img-music/playlist_3/onimous.jpg",
+                "arquivo": "/music/no_goodbye.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "when in darkness",
+                "artista": "Ex0Core",
+                "capa": "/img-music/playlist_3/when_in_darkness.png",
+                "arquivo": "/music/june.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "Friction",
+                "artista": "Dylan Sitts",
+                "capa": "img-music/playlist_3/friction.jpg",
+                "arquivo": "/music/charcoaled_walls.mp3"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "titulo": "Deep Focus",
+        "capa": "/img/deep_focus.jpg",
+        "descricao": "Keep calm and focus with ambient and post-rock music.",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "Augury",
+                "artista": "Lynx XII",
+                "capa": "/img-music/playlist_4/augury.jpg",
+                "arquivo": "/music/no_goodbye.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "Orange Sky",
+                "artista": "Auðura",
+                "capa": "/img-music/playlist_4/orange_sky.jpg",
+                "arquivo": "/music/june.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "the echoing truth",
+                "artista": "Tall Towers",
+                "capa": "/img-music/playlist_4/the_echoing_truth.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "So Far So Good",
+                "artista": "Sun Of They",
+                "capa": "/img-music/playlist_4/so_far_so_good.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "Apricity",
+                "artista": "Imala Zir",
+                "capa": "img-music/playlist_4/apricity.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "titulo": "study mode",
+        "capa": "/img/study_mode.jpg",
+        "descricao": "music to help you ~ focus ~",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "Once More",
+                "artista": "d4vd",
+                "capa": "/img-music/playlist_5/once_more.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "the grudge",
+                "artista": "Olivia Rodrigo",
+                "capa": "/img-music/playlist_5/the_grudge.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "Superbloodmoon (feat. d4vd)",
+                "artista": "Holly Humberstone",
+                "capa": "/img-music/playlist_5/superbloodmoon.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "IF AND/OR WHEN",
+                "artista": "Ruel",
+                "capa": "/img-music/playlist_5/if_andor_when.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "ceilings",
+                "artista": "Lizzy McAlpine",
+                "capa": "img-music/playlist_5/ceilings.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "titulo": "Perfect Concentration",
+        "capa": "/img/perfect_concentration.jpg",
+        "descricao": "Calm piano music for enhanced concentration.",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "Idyllic garden",
+                "artista": "Ellen Wince",
+                "capa": "/img-music/playlist_6/idyllic_garden.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "Bird of Passage",
+                "artista": "Carmelito",
+                "capa": "/img-music/playlist_6/bird_of_passage.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "Après tout",
+                "artista": "Alexis Pavot",
+                "capa": "/img-music/playlist_6/apres_tout.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "Landet",
+                "artista": "Anders Linros",
+                "capa": "/img-music/playlist_6/landet.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "The Proposal",
+                "artista": "Henriette Fleich",
+                "capa": "img-music/playlist_6/the_proposal.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "titulo": "Focus Piano",
+        "capa": "/img/focus_piano.jpg",
+        "descricao": "Soft piano to help you focus, work or study.",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "Incision In The Silence",
+                "artista": "Leisel Walker",
+                "capa": "/img-music/playlist_7/incision_in_the_silence.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "It's You I'm Seeking",
+                "artista": "Matt van Stern",
+                "capa": "/img-music/playlist_7/its_you_im_seeking.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "At A Glance",
+                "artista": "Gale Moore",
+                "capa": "/img-music/playlist_7/at_a_glance.png",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "Canyon, Catch Your Thoughts",
+                "artista": "Warble",
+                "capa": "/img-music/playlist_7/canyon.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "Salt Skin",
+                "artista": "Galen Rise",
+                "capa": "img-music/playlist_7/salt_skin.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "titulo": "Focus with Nature Sounds",
+        "capa": "/img/focus_with_nature_sounds.jpg",
+        "descricao": "Focus with nature sounds in the background...",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "Birds Around The Brook",
+                "artista": "Sleep Sounds of Nature",
+                "capa": "/img-music/playlist_8/birds_around_the_brook.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "Summmmer Forest",
+                "artista": "Nature Recordings",
+                "capa": "/img-music/playlist_8/summmmer_forest.jpg",
+                "arquivo": "../../src/assets/music1.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "Birds In The Rain",
+                "artista": "Mother Earth HD",
+                "capa": "/img-music/playlist_8/birds_in_the_rain.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "Soothing Rain",
+                "artista": "Nuwan",
+                "capa": "/img-music/playlist_8/soothing_rain.jpg",
+                "arquivo": "src/assets/music1.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "Canyon Bird Life",
+                "artista": "Organic Nature Sounds",
+                "capa": "img-music/playlist_8/canyon_bird.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "titulo": "House Focus",
+        "capa": "/img/house_focus.jpg",
+        "descricao": "Instrumental house for when you need to focus!",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "body atlas",
+                "artista": "Parker Son",
+                "capa": "/img-music/playlist_9/body_atlas.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "Magic Island",
+                "artista": "Matobolo",
+                "capa": "/img-music/playlist_9/magic_island.jpg",
+                "arquivo": "src/assets/music1.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "Day Drinks",
+                "artista": "Sonic",
+                "capa": "/img-music/playlist_9/day_drinks.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "Gubei",
+                "artista": "West & Zander",
+                "capa": "/img-music/playlist_9/gubei.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "Soil",
+                "artista": "Bush Lily",
+                "capa": "img-music/playlist_9/soil.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "titulo": "Blues Focus",
+        "capa": "/img/blues_focus.jpg",
+        "descricao": "Soft, instrumental blues to help you concentrate. ",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "Twin Cities Blues",
+                "artista": "Val Monroe",
+                "capa": "/img-music/playlist_10/twin_cities.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "You Don't Know Me",
+                "artista": "Michael Reiss",
+                "capa": "/img-music/playlist_10/you_dont.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "Train Ride",
+                "artista": "Josh Henning",
+                "capa": "/img-music/playlist_10/train_ride.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "Las Grutas Blues",
+                "artista": "Atacustico",
+                "capa": "/img-music/playlist_10/las_grutas_blues.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "Hideaway",
+                "artista": "Val Monroe",
+                "capa": "img-music/playlist_10/hideaway.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "titulo": "Indie Folk for Focus",
+        "capa": "/img/indie_folk_for_focus.jpg",
+        "descricao": "Zone in (or out) with ethereal, meditative instrumental indie folk and acoustic tracks.",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "Old Friend - Instrumental",
+                "artista": "Darlingside",
+                "capa": "/img-music/playlist_11/old_friend.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "Hat of Rain",
+                "artista": "Hiss Golden Messenger",
+                "capa": "/img-music/playlist_11/hat_of_rain.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "Goodbye, Honey, You Call That Gone",
+                "artista": "Jake Blount",
+                "capa": "/img-music/playlist_11/goodbye.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "Georgia Drumbeat - Instrumental",
+                "artista": "Dom Flemons",
+                "capa": "/img-music/playlist_11/georgia_drumbeat.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "Neglect",
+                "artista": "Courtney Hartman, Bill Frisell",
+                "capa": "img-music/playlist_11/neglect.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "titulo": "Soundtracks for Studying",
+        "capa": "/img/soundtracks_for_studying.jpg",
+        "descricao": "Focus and relax with the help of these chilled cinematic soundtracks.",
+        "musicas": [
+            {
+                "id": 1,
+                "nome": "Day One (Interstellar Theme)",
+                "artista": "Hans Zimmer",
+                "capa": "/img-music/playlist_12/day_one.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 2,
+                "nome": "Sweden",
+                "artista": "C418",
+                "capa": "/img-music/playlist_12/sweden.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 3,
+                "nome": "Together Again",
+                "artista": "Stephen Rennicks",
+                "capa": "/img-music/playlist_12/together_again.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 4,
+                "nome": "Epiphany",
+                "artista": "Trent Reznor and Atticus Ross",
+                "capa": "/img-music/playlist_12/epiphany.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            },
+            {
+                "id": 5,
+                "nome": "Prince Phillip",
+                "artista": "James Newton Howard",
+                "capa": "img-music/playlist_12/prince_phillip.jpg",
+                "arquivo": "/music/penumbra.mp3"
+            }
+        ]
+    }
+]
