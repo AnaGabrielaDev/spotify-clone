@@ -2,9 +2,10 @@ import { Header } from "../../components/Header";
 import { Form } from "../../components/Form";
 import { useState } from "react";
 import { Logo } from "../../components/Logo";
+import Message from "../../components/Message/Message";
 
 import { Link, useNavigate } from "react-router-dom";
-import Message from "../../components/Message/Message";
+import axios from "axios";
 
 
 export function SignUp() {
@@ -38,13 +39,14 @@ export function SignUp() {
             nickname: userData.shift() as string,
             favGenres: favorites
         }
-        console.log(user);
+        axios.post('http://localhost:8000/users', user, {headers:{"Content-Type" : "application/json"}}).then((resp) => {
+            console.log(resp);
+        })
         setType('success');
         setMessage('Você foi cadastrado com sucesso! Redirecionando...');
         setTimeout(() => {
             nav('/')  
         }, 3000)
-        //
     }
 
     function toggleScreen() {
@@ -63,7 +65,6 @@ export function SignUp() {
         if (!favorites.includes(genre)) {
             favorites.push(genre);
         }
-        console.log(favorites);
     }
     function cancelPartialSubmit(ev: React.SyntheticEvent) {
         ev.preventDefault();
