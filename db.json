@@ -1,0 +1,72 @@
+{
+  "songs": [
+    {
+      "name": "",
+      "author": "",
+      "src": "",
+      "genre": ""
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "a",
+      "email": "b",
+      "password": "",
+      "birthdate": "",
+      "nickname": "",
+      "favGenres": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "username": "b",
+      "email": "c",
+      "password": "1",
+      "birthdate": "1",
+      "nickname": "3",
+      "favGenres": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "username": "ba",
+      "email": "c3",
+      "password": "11",
+      "birthdate": "11",
+      "nickname": "a3",
+      "favGenres": [
+        "a",
+        "b"
+      ],
+      "id": 3
+    },
+    {
+      "username": "shinzou27",
+      "email": "felipecassianobarbosa@hotmail.com",
+      "password": "12345678",
+      "birthdate": "2003-08-10",
+      "nickname": "shinzou27",
+      "favGenres": [
+        "Rock",
+        "Pop"
+      ],
+      "id": 4
+    }
+  ],
+  "playlists": [
+    {
+      "title": "",
+      "songs": [
+        {
+          "name": "",
+          "src": "",
+          "genre": ""
+        }
+      ]
+    }
+  ]
+}
