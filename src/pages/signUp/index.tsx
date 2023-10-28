@@ -30,7 +30,6 @@ export function SignUp() {
         ev.preventDefault();
         const nickname = (document.querySelector("[name='nickname']") as HTMLInputElement).value;
         userData.push(nickname);
-        console.log(userData);
         const user: User = {
             username: userData.shift() as string,
             email: userData.shift() as string,
@@ -75,7 +74,6 @@ export function SignUp() {
         if (email != confirmEmail) {
             setType('error');
             setMessage('E-mails não coincidem!');
-            console.log("a");
         }
     }
     return (
