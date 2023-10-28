@@ -39,8 +39,8 @@ export function SignUp() {
             nickname: userData.shift() as string,
             favGenres: favorites
         }
-        axios.post('http://localhost:8000/users', user, {headers:{"Content-Type" : "application/json"}}).then((resp) => {
-            console.log(resp);
+        axios.post('http://localhost:8000/users', user, {headers:{"Content-Type" : "application/json"}}).then(() => {
+            localStorage.setItem("loggedUser", JSON.stringify(user));
         })
         setType('success');
         setMessage('Você foi cadastrado com sucesso! Redirecionando...');
