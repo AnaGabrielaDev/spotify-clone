@@ -55,6 +55,19 @@
         "Pop"
       ],
       "id": 4
+    },
+    {
+      "username": "felipe",
+      "email": "felipecassianobarbosa@hotmail.com",
+      "password": "123",
+      "birthdate": "2003-08-10",
+      "nickname": "felipe",
+      "favGenres": [
+        "Rock",
+        "Heavy Metal",
+        "Eletrônica"
+      ],
+      "id": 5
     }
   ],
   "playlists": [
