@@ -1,6 +1,25 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+
 
 export function Navigation() {
+    type User = {
+        username: string,
+        nickname: string,
+        email: string,
+        password: string,
+        birthdate: string,
+        favGenres: string[],
+    }
+    const [user, setUser] = useState<User>();
+    useEffect(() => {
+        const user: String = (localStorage.getItem("loggedUser")); 
+        setUser(JSON.parse(user));
+    }, [])
+    function logOut() {
+        localStorage.removeItem("loggedUser");
+        window.location.reload();
+    }
     return (
         <nav className="flex items-center mr-8 text-base">
             <ul className="flex gap-9">
@@ -10,12 +29,21 @@ export function Navigation() {
                 </Link>
                 <li className="font-bold hover:text-green-500">Baixar</li>
                 <li>|</li>
-                <Link to="/signUp" replace={true}>
-                    <li className="hover:text-green-500">Inscrever-se</li>
-                </Link>
-                <Link to="/login" replace={true}>
-                    <li className="hover:text-green-500">Entrar</li>
-                </Link>
+                {user ?
+                    <>
+                        <li className="hover:text-green-500">Olá, {user.username}!</li>
+                            <a className="hover:text-green-500 hover:click" onClick={logOut}>Sair</a>
+                    </>
+                    :
+                    <>
+                        <Link to="/signUp" replace={true}>
+                            <li className="hover:text-green-500">Inscrever-se</li>
+                        </Link>
+                        <Link to="/login" replace={true}>
+                            <li className="hover:text-green-500">Entrar</li>
+                        </Link>
+                    </>
+                }
             </ul>
         </nav>
     )
