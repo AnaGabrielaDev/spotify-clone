@@ -6,15 +6,15 @@ import { Logo } from "../../components/Logo";
 
 export default function SearchMusic() {
     const [searchQuery, setSearchQuery] = useState('');
-    const [searchResults, setSearchResults] = useState<{ name: string, artist: string }[]>([]);
+    const [searchResults, setSearchResults] = useState<{ name: string, capa: string, artist: string }[]>([]);
 
     const handleSearch = (query: string) => {
-        const results: { name: string, artist: string }[] = [];
+        const results: { name: string, capa: string, artist: string }[] = [];
 
         playlists.forEach((playlist) => {
             playlist.musicas.forEach((musica) => {
                 if (musica.nome.toLowerCase().includes(query.toLowerCase())) {
-                    results.push({ name: musica.nome, artist: musica.artista });
+                    results.push({ name: musica.nome, capa: musica.capa, artist: musica.artista });
                 }
             });
         });
@@ -51,12 +51,20 @@ export default function SearchMusic() {
                     {searchResults.length > 0 ? (
                         searchResults.map((result, index) => (
                             <li key={index} className="result-item">
-                                <span className="result-name">{result.name}</span>
-                                <span className="result-artist"> by {result.artist} </span>
-                                <div></div>
-                                <button onClick={() => handleButtonClick(result)} className="custom-button">
-                                    Adicionar
-                                </button>
+                                <img
+                                    src={result.capa}
+                                    alt={result.name}
+                                    className="music-cover"
+                                />
+                                <div className="result-details">
+                                    <span className="result-name">{result.name}</span>
+                                    <span className="result-artist"> by {result.artist} </span>
+                                </div>
+                                <div className="result-button">
+                                    <button onClick={() => handleButtonClick(result)} className="custom-button">
+                                        Adicionar
+                                    </button>
+                                </div>
                             </li>
                         ))
                     ) : (
