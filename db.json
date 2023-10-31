@@ -73,6 +73,32 @@
       "id": 6
     }
   ],
+  "customPlaylist": [
+    {
+      "userId": 6,
+      "title": "Minha Playlist",
+      "description": "Playlist pessoal",
+      "img": "/img/intense_studying.jpg",
+      "songs": [
+        {
+          "name": "Bird of Passage",
+          "capa": "/img-music/playlist_6/bird_of_passage.jpg",
+          "artist": "Carmelito"
+        },
+        {
+          "name": "body atlas",
+          "capa": "/img-music/playlist_9/body_atlas.jpg",
+          "artist": "Parker Son"
+        },
+        {
+          "name": "Las Grutas Blues",
+          "capa": "/img-music/playlist_10/las_grutas_blues.jpg",
+          "artist": "Atacustico"
+        }
+      ],
+      "id": 1
+    }
+  ],
   "playlists": [
     {
       "id": 1,
@@ -159,6 +185,22 @@
           "file": "/music/music1.mp3"
         }
       ]
+    },
+    {
+      "userId": 6,
+      "title": "Minha Playlist",
+      "description": "Playlist pessoal",
+      "img": "/img/intense_studying.jpg",
+      "songs": [
+        {
+          "name": "Apricity",
+          "capa": "/img-music/playlist_4/apricity.jpg",
+          "artist": "Imala Zir",
+          "id": 5,
+          "file": "/music/penumbra.mp3"
+        }
+      ],
+      "id": 3
     }
   ]
 }

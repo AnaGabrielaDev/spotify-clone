@@ -19,6 +19,7 @@ interface SongProps {
   interface PlaylistProps {
     id: number,
     title: string
+    userId: number
     "description": string
     "img": string
     "songs": SongProps[]
@@ -28,8 +29,18 @@ export function Home() {
     const [playlists, setPlaylists] = useState([] as PlaylistProps[]);
     const getPlaylists = useCallback(async () => {
         const {data} = await axios.get("http://localhost:3000/playlists")
+        const user = JSON.parse(localStorage.getItem("loggedUser") as string)
+        if(!user) {
+            const publicPlaylists = data.filter((play) => {
+                return !play.userId
+            })
+            setPlaylists(publicPlaylists)
+        }
+        const playlist = playlists.filter((play) => {
+            return play.userId == user.id || !play.userId
+        })
 
-        setPlaylists(data)
+        setPlaylists([...data, playlist])
     }, [])
 
     useEffect(() => {
