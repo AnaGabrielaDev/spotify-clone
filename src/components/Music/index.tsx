@@ -14,6 +14,11 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
   const [volume, setVolume] = useState(1); 
   const audioRef = useRef(new Audio(musicUrl));
 
+  
+  const handleTimeUpdate = () => {
+    setCurrentTime(audioRef.current.currentTime);
+  };
+
   useEffect(() => {
     const audio = audioRef.current;
 
@@ -21,13 +26,11 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
     audio.play();
     setIsPlaying(true);
 
-    const handleTimeUpdate = () => {
-      setCurrentTime(audio.currentTime);
-    };
-
     audio.addEventListener('timeupdate', handleTimeUpdate);
 
     return () => {
+      audio.pause();
+      audio.src = '';
       audio.removeEventListener('timeupdate', handleTimeUpdate);
     };
   }, [musicUrl]); // Adicione musicUrl como dependência
