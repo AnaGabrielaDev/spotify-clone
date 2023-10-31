@@ -1,12 +1,4 @@
 {
-  "songs": [
-    {
-      "name": "",
-      "author": "",
-      "src": "",
-      "genre": ""
-    }
-  ],
   "users": [
     {
       "id": 1,
@@ -72,12 +64,24 @@
   ],
   "playlists": [
     {
-      "title": "",
+      "id": 1,
+      "title": "FirstPlaylist",
+      "description": "FirstPlaylist",
+      "img": "/img/intense_studying.jpg",
       "songs": [
         {
-          "name": "",
-          "src": "",
-          "genre": ""
+          "id": 1,
+          "name": "Penumbra",
+          "artist": "Davignon",
+          "capa": "/img-music/playlist_1/penumbra.png",
+          "file": "/music/penumbra.mp3"
+        },
+        {
+          "id": 2,
+          "name": "June",
+          "artist": "André Dívou",
+          "capa": "/img-music/playlist_1/june.jpg",
+          "file": "/music/june.mp3"
         }
       ]
     }
