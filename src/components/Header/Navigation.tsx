@@ -27,6 +27,9 @@ export function Navigation() {
                 <Link to="/faq" replace={true}>
                     <li className="font-bold hover:text-green-500">Suporte</li>
                 </Link>
+                <Link to="/search" replace={true}>
+                    <li className="font-bold hover:text-green-500">Busca</li>
+                </Link>
                 <li className="font-bold hover:text-green-500">Baixar</li>
                 <li>|</li>
                 {user ?
