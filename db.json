@@ -191,16 +191,16 @@
       "title": "Minha Playlist",
       "description": "Playlist pessoal",
       "img": "/img/intense_studying.jpg",
-      "songs": [
-        {
-          "name": "Apricity",
-          "capa": "/img-music/playlist_4/apricity.jpg",
-          "artist": "Imala Zir",
-          "id": 5,
-          "file": "/music/penumbra.mp3"
-        }
-      ],
+      "songs": [],
       "id": 3
+    },
+    {
+      "userId": 4,
+      "title": "Minha Playlist",
+      "description": "Playlist pessoal",
+      "img": "/img/intense_studying.jpg",
+      "songs": [],
+      "id": 4
     }
   ]
 }

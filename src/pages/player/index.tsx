@@ -21,6 +21,7 @@ interface PlaylistProps {
 }
 
 export default function Player() {
+  const [isUserPlaylist, setIsUserPlaylist] = useState<boolean>(false)
   const [playlist, setPlaylist] = useState<PlaylistProps>()
   const [selectedMusicId, setSelectedMusicId] = useState<number | null>(null);
 
@@ -33,9 +34,21 @@ export default function Player() {
 
   const getPlaylistData = useCallback(async () => {
     const { data } = await axios.get(`http://localhost:3000/playlists/${id}`)
+    if(data.userId) setIsUserPlaylist(true)
 
     setPlaylist(data)
   }, [id])
+
+  const deleteMusicFromPlaylist = async (musicId: number) => {
+    const currentSongs = playlist?.songs.filter(song => song.id !== musicId)
+    
+    await axios.put(`http://localhost:3000/playlists/${id}`, {
+      ...playlist,
+      songs: currentSongs
+    })
+
+    getPlaylistData()
+  }
 
   useEffect(() => {
     getPlaylistData()
@@ -66,6 +79,7 @@ export default function Player() {
                 <span className="song-number">{musica.id}.</span>
                 <span className="song-name">{musica.name}</span>
                 <span className="song-author">{musica.artist}</span>
+                {isUserPlaylist && <button className='bg-red-500 p-2 ml-3 rounded' onClick={() => deleteMusicFromPlaylist(musica.id)}>Excluir</button>}
               </li>
             ))}
           </ul>

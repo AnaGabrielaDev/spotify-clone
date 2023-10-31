@@ -30,22 +30,25 @@ export function Home() {
     const getPlaylists = useCallback(async () => {
         const {data} = await axios.get("http://localhost:3000/playlists")
         const user = JSON.parse(localStorage.getItem("loggedUser") as string)
-        if(!user) {
-            const publicPlaylists = data.filter((play) => {
-                return !play.userId
-            })
-            setPlaylists(publicPlaylists)
-        }
-        const playlist = playlists.filter((play) => {
-            return play.userId == user.id || !play.userId
+        const publicPlaylists = data.filter((play: any) => {
+            return !play.userId
         })
 
-        setPlaylists([...data, playlist])
+        if(!user) {
+            setPlaylists(publicPlaylists)
+        }
+
+        const playlist = data.filter((play: any) => {
+            return play.userId === user.id
+        })
+
+        setPlaylists([...publicPlaylists, ...playlist])
     }, [])
 
     useEffect(() => {
         getPlaylists()
     }, [getPlaylists])
+
     return (
         <>
             <Header.HeaderWrapper>
