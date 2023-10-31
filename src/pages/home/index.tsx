@@ -2,13 +2,39 @@ import { Header } from "../../components/Header";
 import { Logo } from "../../components/Logo";
 
 import "./style.css"
-import playlists from "./playlists.json"
 
 import { Card } from "../../components/Card";
 import { AiFillHome, AiFillWechat, AiOutlineSearch } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import axios from "axios";
+
+interface SongProps {
+    "id": number,
+    "name": string,
+    "artist": string,
+    "capa": string,
+    "file": string
+  }
+  interface PlaylistProps {
+    id: number,
+    title: string
+    "description": string
+    "img": string
+    "songs": SongProps[]
+  }
 
 export function Home() {
+    const [playlists, setPlaylists] = useState([] as PlaylistProps[]);
+    const getPlaylists = useCallback(async () => {
+        const {data} = await axios.get("http://localhost:3000/playlists")
+
+        setPlaylists(data)
+    }, [])
+
+    useEffect(() => {
+        getPlaylists()
+    }, [getPlaylists])
     return (
         <>
             <Header.HeaderWrapper>
@@ -44,7 +70,7 @@ export function Home() {
                 <div className="covers">
                     {playlists.map(p => (
                         <Link to={`/player/${p.id}`}>
-                        <Card key={p.id} img={p.capa} title={p.titulo} />
+                            <Card key={p.id} img={p.img} title={p.title} />
                         </Link>
                     ))}
                 </div>
