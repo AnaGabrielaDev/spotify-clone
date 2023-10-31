@@ -52,7 +52,7 @@
   "playlists": [
     {
       "id": 1,
-      "title": "FirstPlaylist",
+      "title": "Intense Studying",
       "description": "FirstPlaylist",
       "img": "/img/intense_studying.jpg",
       "songs": [
@@ -69,7 +69,71 @@
           "artist": "André Dívou",
           "capa": "/img-music/playlist_1/june.jpg",
           "file": "/music/june.mp3"
+        },
+        {
+          "id": 3,
+          "name": "Stratus",
+          "artist": "Zoran Tudor",
+          "capa": "/img-music/playlist_1/stratus.jpg",
+          "file": "/music/stratus.mp3"
+        },
+        {
+          "id": 4,
+          "name": "No Goodbye",
+          "artist": "Jule Dubois",
+          "capa": "/img-music/playlist_1/no_goodbye.png",
+          "file": "/music/no_goodbye.mp3"
+        },
+        {
+          "id": 5,
+          "name": "Chacoaled Walls",
+          "artist": "Jean-Marie Bussiere",
+          "capa": "/img-music/playlist_1/charcoaled_walls.jpg",
+          "file": "/music/charcoaled_walls.mp3"
         }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Jazz for Study",
+      "description": "Find your study focus with calm instrumental Jazz.",
+      "img": "/img/jazz_for_study.jpg",
+      "songs": [
+        {
+          "id": 1,
+          "name": "Breathe the Air",
+          "artist": "Glass Trio",
+          "capa": "/img-music/playlist_2/breathe_the_air.jpg",
+          "file": "/music/penumbra.mp3"
+      },
+      {
+          "id": 2,
+          "name": "Traveling Day",
+          "artist": "Arta Porting",
+          "capa": "/img-music/playlist_2/traveling_day.jpg",
+          "file": "/music/charcoaled_walls.mp3"
+      },
+      {
+          "id": 3,
+          "name": "A Bite-Sized Romance",
+          "artist": "6th Street Jazz",
+          "capa": "/img-music/playlist_2/a_bite-sized_romance.jpg",
+          "file": "/music/no_goodbye.mp3"
+      },
+      {
+          "id": 4,
+          "name": "Twenty Somethings",
+          "artist": "The Central Park North",
+          "capa": "/img-music/playlist_2/twenty_somethings.jpg",
+          "file": "/music/stratus.mp3"
+      },
+      {
+          "id": 5,
+          "name": "Sunset Stroll",
+          "artist": "Urban Jazz Junction",
+          "capa": "/img-music/playlist_2/sunset_stroll.png",
+          "file": "/music/music1.mp3"
+      }
       ]
     }
   ]
