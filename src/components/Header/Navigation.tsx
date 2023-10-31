@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export function Navigation() {
@@ -13,8 +13,8 @@ export function Navigation() {
     }
     const [user, setUser] = useState<User>();
     useEffect(() => {
-        const user: String = (localStorage.getItem("loggedUser")); 
-        setUser(JSON.parse(user));
+        const user: string | null= (localStorage.getItem("loggedUser")); 
+        user ? setUser(JSON.parse(user)) : null
     }, [])
     function logOut() {
         localStorage.removeItem("loggedUser");

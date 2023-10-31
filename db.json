@@ -60,6 +60,17 @@
         "Eletrônica"
       ],
       "id": 5
+    },
+    {
+      "username": "aninha_gabrielah",
+      "email": "asdasdas@mail.com",
+      "password": "2411",
+      "birthdate": "2003-11-24",
+      "nickname": "aninha_gabrielah",
+      "favGenres": [
+        "Rap"
+      ],
+      "id": 6
     }
   ],
   "playlists": [
@@ -118,35 +129,35 @@
           "artist": "Glass Trio",
           "capa": "/img-music/playlist_2/breathe_the_air.jpg",
           "file": "/music/penumbra.mp3"
-      },
-      {
+        },
+        {
           "id": 2,
           "name": "Traveling Day",
           "artist": "Arta Porting",
           "capa": "/img-music/playlist_2/traveling_day.jpg",
           "file": "/music/charcoaled_walls.mp3"
-      },
-      {
+        },
+        {
           "id": 3,
           "name": "A Bite-Sized Romance",
           "artist": "6th Street Jazz",
           "capa": "/img-music/playlist_2/a_bite-sized_romance.jpg",
           "file": "/music/no_goodbye.mp3"
-      },
-      {
+        },
+        {
           "id": 4,
           "name": "Twenty Somethings",
           "artist": "The Central Park North",
           "capa": "/img-music/playlist_2/twenty_somethings.jpg",
           "file": "/music/stratus.mp3"
-      },
-      {
+        },
+        {
           "id": 5,
           "name": "Sunset Stroll",
           "artist": "Urban Jazz Junction",
           "capa": "/img-music/playlist_2/sunset_stroll.png",
           "file": "/music/music1.mp3"
-      }
+        }
       ]
     }
   ]

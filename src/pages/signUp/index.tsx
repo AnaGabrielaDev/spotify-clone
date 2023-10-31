@@ -6,11 +6,12 @@ import Message from "../../components/Message/Message";
 
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { useForm } from "react-hook-form";
 
 export function SignUp() {
     const [proceed, setProceed] = useState<boolean>(true);
     const [userData, setUserData] = useState<string[]>([]);
+    const { register } = useForm();
 
     const nav = useNavigate();
 
@@ -38,7 +39,7 @@ export function SignUp() {
             nickname: userData.shift() as string,
             favGenres: favorites
         }
-        axios.post('http://localhost:8000/users', user, {headers:{"Content-Type" : "application/json"}}).then(() => {
+        axios.post('http://localhost:3000/users', user, {headers:{"Content-Type" : "application/json"}}).then(() => {
             localStorage.setItem("loggedUser", JSON.stringify(user));
         })
         setType('success');
@@ -68,38 +69,38 @@ export function SignUp() {
     function cancelPartialSubmit(ev: React.SyntheticEvent) {
         ev.preventDefault();
     }
-    function testEmails() {
-        const email = (document.querySelector("[name='email']") as HTMLInputElement).value;
-        const confirmEmail = (document.querySelector("[name='confirmEmail']") as HTMLInputElement).value;
-        if (email != confirmEmail) {
-            setType('error');
-            setMessage('E-mails não coincidem!');
-        }
-    }
+    // function testEmails() {
+    //     const email = (document.querySelector("[name='email']") as HTMLInputElement).value;
+    //     const confirmEmail = (document.querySelector("[name='confirmEmail']") as HTMLInputElement).value;
+    //     if (email != confirmEmail) {
+    //         setType('error');
+    //         setMessage('E-mails não coincidem!');
+    //     }
+    // }
     return (
         <div className="bg-gradient-to-tl from-green-950 to-green-500 h-screen text-white">
             <Header.HeaderWrapper>
                 <Link to="/">
                     <Logo />
-
                 </Link>
             </Header.HeaderWrapper>
             {message && <Message type={type} text={message}/>}
             {proceed ?
                 <Form.FormWrapper handleSubmit={cancelPartialSubmit}>
-                    <Form.Input label="Nome de usuário" type="text" name="username" />
-                    <Form.Input label="E-mail" type="email" name="email" />
-                    <Form.Input label="Confirme seu E-mail" type="email" handleBlur={testEmails} name="confirmEmail" />
-                    <Form.Input label="Senha" type="password" name="password" />
-                    <Form.Input label="Confirme sua senha" type="password" name="confirmPassword" />
-                    <Form.Input label="Data de Nascimento" type="date" name="birthdate" />
+                    <Form.Input label="Nome de usuário" type="text" name="username" register={register} />
+                    <Form.Input label="E-mail" type="email" name="email" register={register} />
+                    <Form.Input label="Confirme seu E-mail" type="email" name="confirmEmail" register={register} />
+                    <Form.Input label="Senha" type="password" name="password" register={register} />
+                    <Form.Input label="Confirme sua senha" type="password" name="confirmPassword" register={register} />
+                    <Form.Input label="Data de Nascimento" type="date" name="birthdate" register={register} />
                     <div>
-                        <Form.Button text="Continuar" width="400" handleOnClick={toggleScreen}/>
+                        <Form.Button text="Continuar" width="400" handleSubmit
+                        ={toggleScreen}/>
                     </div>
                 </Form.FormWrapper>
-                :
+            :
                 <Form.FormWrapper handleSubmit={createUser}>
-                    <Form.Input label="Nome de exibição" type="text" name="nickname" />
+                    <Form.Input label="Nome de exibição" type="text" name="nickname" register={register}/>
                     <div className="max-w-md">
                         <hr className="my-2" />
                         <label>Vamos conhecer mais sobre seu gosto musical!<br /></label>
@@ -112,7 +113,7 @@ export function SignUp() {
                     <Form.Checkbox label="Concordo com os termos de serviço." name="termsOfService" />
                     <Form.Checkbox label="Concordo em receber e-mails sobre novidades e ofertas." name="emails" />
                     <div>
-                    <Form.Button text="Criar Conta" width="400" handleOnClick={createUser}/>
+                    <Form.Button text="Criar Conta" width="400" type="submit"/>
                     </div>
                 </Form.FormWrapper>
             }

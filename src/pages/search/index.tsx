@@ -25,7 +25,7 @@ export default function SearchMusic() {
 
     function handleButtonClick(result: { name: string; artist: string; }): void {
         /*TODO*/
-        throw new Error('Function not implemented.');
+        throw new Error(`${result} Function not implemented.`);
     }
 
     return (

@@ -22,7 +22,7 @@ type Inputs = {
 }
 
 export function Login() {
-    const {register, handleSubmit, watch} = useForm<Inputs>()
+    const {register, handleSubmit} = useForm<Inputs>()
 
     // const [message, setMessage] = useState<string>();
     // const [type, setType] = useState<string>('error');
