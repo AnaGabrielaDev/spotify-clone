@@ -15,32 +15,33 @@ interface SongProps {
     "artist": string,
     "capa": string,
     "file": string
-  }
-  interface PlaylistProps {
+}
+interface PlaylistProps {
     id: number,
-    title: string
+    name: string
     userId: number
-    "description": string
-    "img": string
+    thumbnail: string
     "songs": SongProps[]
-  }
+}
 
 export function Home() {
     const [playlists, setPlaylists] = useState([] as PlaylistProps[]);
     const getPlaylists = useCallback(async () => {
-        const {data} = await axios.get("http://localhost:3000/playlists")
+        const { data } = await axios.get("http://localhost:3000/playlist")
         const user = JSON.parse(localStorage.getItem("loggedUser") as string)
         const publicPlaylists = data.filter((play: any) => {
             return !play.userId
         })
+        console.log(user);
 
-        if(!user) {
+        let playlist = [];
+        if (!user) {
             setPlaylists(publicPlaylists)
+        } else {
+            playlist = data.filter((play: any) => {
+                return play.userId === user.id
+            })
         }
-
-        const playlist = data.filter((play: any) => {
-            return play.userId === user.id
-        })
 
         setPlaylists([...publicPlaylists, ...playlist])
     }, [])
@@ -56,40 +57,40 @@ export function Home() {
                 <Header.Navigation />
             </Header.HeaderWrapper>
             <div className="outer-div">
-            <div className="left">
-                <div className="navbar box">
-                    <Link to="/">
-                        <p className="flex gap-2"><AiFillHome /> Início</p>
-                    </Link>
-                    <Link to="/faq">
-                        <p className="flex gap-2"><AiFillWechat />FAQ</p>
-                    </Link>
-                    <a href="https://open.spotify.com/intl-pt?">
-                        <p className="flex gap-2"><AiOutlineSearch />Buscar</p>
-                    </a>
+                <div className="left">
+                    <div className="navbar box">
+                        <Link to="/">
+                            <p className="flex gap-2"><AiFillHome /> Início</p>
+                        </Link>
+                        <Link to="/faq">
+                            <p className="flex gap-2"><AiFillWechat />FAQ</p>
+                        </Link>
+                        <a href="https://open.spotify.com/intl-pt?">
+                            <p className="flex gap-2"><AiOutlineSearch />Buscar</p>
+                        </a>
+                    </div>
+                    <div className="user box">
+                        <h4>Sua biblioteca</h4>
+                        <div className="user-list">
+                            <ul>
+                                <li><a href="#">Preferidas</a></li>
+                                <li><a href="#">Jazz</a></li>
+                                <li><a href="#">Rock</a></li>
+                                <li><a href="#">Pop</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div className="user box">
-                    <h4>Sua biblioteca</h4>
-                    <div className="user-list">
-                        <ul>
-                            <li><a href="#">Preferidas</a></li>
-                            <li><a href="#">Jazz</a></li>
-                            <li><a href="#">Rock</a></li>
-                            <li><a href="#">Pop</a></li>
-                        </ul>
+                <div className="right box">
+                    <div className="covers">
+                        {playlists.map(p => (
+                            <Link to={`/player/${p.id}`}>
+                                <Card key={p.id} img={p.thumbnail} title={p.name} />
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>
-            <div className="right box">
-                <div className="covers">
-                    {playlists.map(p => (
-                        <Link to={`/player/${p.id}`}>
-                            <Card key={p.id} img={p.img} title={p.title} />
-                        </Link>
-                    ))}
-                </div>
-            </div>
-        </div>
         </>
     )
 }

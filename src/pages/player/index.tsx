@@ -33,7 +33,7 @@ export default function Player() {
   const { id } = useParams();
 
   const getPlaylistData = useCallback(async () => {
-    const { data } = await axios.get(`http://localhost:3000/playlists/${id}`)
+    const { data } = await axios.get(`http://localhost:3000/playlist/${id}`)
     if(data.userId) setIsUserPlaylist(true)
 
     setPlaylist(data)
@@ -42,7 +42,7 @@ export default function Player() {
   const deleteMusicFromPlaylist = async (musicId: number) => {
     const currentSongs = playlist?.songs.filter(song => song.id !== musicId)
     
-    await axios.put(`http://localhost:3000/playlists/${id}`, {
+    await axios.put(`http://localhost:3000/playlist/${id}`, {
       ...playlist,
       songs: currentSongs
     })

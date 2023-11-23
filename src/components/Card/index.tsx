@@ -9,7 +9,7 @@ export function Card(props: CardProps) {
     return (
         <>
             <div className="img-box">
-                <img src={props.img} />
+                <img crossOrigin="anonymous" src={props.img} />
                 <p className="playlist-name">{props.title}</p>
             </div>
         </>

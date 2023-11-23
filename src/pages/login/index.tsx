@@ -28,8 +28,15 @@ export function Login() {
     // const [type, setType] = useState<string>('error');
     const nav = useNavigate();
     const login: SubmitHandler<Inputs> = async (data: Inputs) => {
-        const response = await axios.get('http://localhost:3000/users')
-
+        const email = document.getElementsByName('email')[0].value;
+        const password = document.getElementsByName('password')[0].value;
+        
+        const response = await axios.post('http://localhost:3000/login', {
+            email: email,
+            password: password
+        })
+        console.log(response.data.accessToken);
+        
         const user = response.data.find((user: User) => {
             return user.username == data.email || user.email == data.email
         })
