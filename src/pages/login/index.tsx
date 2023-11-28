@@ -4,17 +4,8 @@ import { Logo } from "../../components/Logo";
 import { Form } from "../../components/Form";
 
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { useForm, SubmitHandler } from "react-hook-form";
-
-type User = {
-    username: string,
-    nickname: string,
-    email: string,
-    password: string,
-    birthdate: string,
-    favGenres: string[],
-}
+import { useAuth } from "../../hooks/useAuth";
 
 type Inputs = {
     email: string
@@ -22,44 +13,38 @@ type Inputs = {
 }
 
 export function Login() {
-    const {register, handleSubmit} = useForm<Inputs>()
+  const {register, handleSubmit} = useForm<Inputs>()
+  const { signIn } = useAuth()
 
-    // const [message, setMessage] = useState<string>();
-    // const [type, setType] = useState<string>('error');
-    const nav = useNavigate();
-    const login: SubmitHandler<Inputs> = async (data: Inputs) => {
-        const email = document.getElementsByName('email')[0].value;
-        const password = document.getElementsByName('password')[0].value;
-        
-        const response = await axios.post('http://localhost:3000/login', {
-            email: email,
-            password: password
-        })
-        console.log(response.data.accessToken);
-        
-        const user = response.data.find((user: User) => {
-            return user.username == data.email || user.email == data.email
-        })
-        if(!user) return
+  const nav = useNavigate();
+  const login: SubmitHandler<Inputs> = async ({email, password}: Inputs) => {
+    const response = await signIn({
+      email,
+      password
+    })
 
-        localStorage.setItem("loggedUser", JSON.stringify(user));
-        nav('/');
+    if(!response.user) {
+      alert("Usuário ou senha incorretos")
+      return
     }
-    return (
-        <div className="bg-gradient-to-tl from-green-950 to-green-500 h-screen text-white">
-            <Header.HeaderWrapper>
-                <Link to="/">
-                    <Logo />
-                </Link>
-            </Header.HeaderWrapper>
-            {/* {message && <Message type={type} text={message} />} */}
-            <Form.FormWrapper handleSubmit={handleSubmit(login)}>
-                <Form.Input label="Nome de usuário ou e-mail" type="text" register={register} name="email" />
-                <Form.Input label="Senha" type="password" register={register} name="password" />
-                <div>
-                    <Form.Button text="Entrar" width="400" type="submit" />
-                </div>
-            </Form.FormWrapper>
+
+    nav('/');
+  }
+  return (
+    <div className="bg-gradient-to-tl from-green-950 to-green-500 h-screen text-white">
+      <Header.HeaderWrapper>
+        <Link to="/">
+          <Logo />
+        </Link>
+      </Header.HeaderWrapper>
+      {/* {message && <Message type={type} text={message} />} */}
+      <Form.FormWrapper handleSubmit={handleSubmit(login)}>
+        <Form.Input label="Nome de usuário ou e-mail" type="text" register={register} name="email" />
+        <Form.Input label="Senha" type="password" register={register} name="password" />
+        <div>
+          <Form.Button text="Entrar" width="400" type="submit" />
         </div>
-    )
+      </Form.FormWrapper>
+    </div>
+  )
 }

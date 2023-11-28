@@ -8,13 +8,13 @@ interface FormWrapperInterface {
 }
 
 function FormWrapper({children, handleSubmit}: FormWrapperInterface) {
-    return (
-        <form className={twMerge("flex")} onSubmit={handleSubmit}>
-            <div className="my-20 mx-auto justify-between items-center">
-                {children}
-            </div>
-        </form>
-    )
+  return (
+    <form className={twMerge("flex")} onSubmit={handleSubmit}>
+      <div className="my-20 mx-auto justify-between items-center">
+        {children}
+      </div>
+    </form>
+  )
 }
 
 export default FormWrapper;
