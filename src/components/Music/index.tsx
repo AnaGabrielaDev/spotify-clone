@@ -21,6 +21,7 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
 
   useEffect(() => {
     const audio = audioRef.current;
+    audio.crossOrigin = 'false';
 
     audio.src = musicUrl;
     audio.play();
@@ -72,7 +73,7 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
         <input className="range accent-green-500" type="range" min="0" max={audioRef.current.duration} value={currentTime} onChange={handleTimeSliderChange} />
         <div className="items-center grid grid-cols-3">
           <div className="mx-12 flex items-center gap-4">
-            <img src={musicPicture} width={50} height={50} alt="image of player" style={{objectFit: "contain"}} />
+            <img crossOrigin="anonymous" src={musicPicture} width={50} height={50} alt="image of player" style={{objectFit: "contain"}} />
             <p className="text-lg">{musicName}</p>
           </div>
           <div className="flex justify-center">

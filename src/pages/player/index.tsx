@@ -9,9 +9,8 @@ import axios from 'axios';
 interface SongProps {
   "id": number,
   "name": string,
-  "artist": string,
-  "capa": string,
-  "file": string
+  "url": string,
+  "thumbnail": string
 }
 interface PlaylistProps {
   title: string
@@ -22,7 +21,8 @@ interface PlaylistProps {
 
 export default function Player() {
   const [isUserPlaylist, setIsUserPlaylist] = useState<boolean>(false)
-  const [playlist, setPlaylist] = useState<PlaylistProps>()
+  const [playlist, setPlaylist] = useState<PlaylistProps>();
+  const [songs, setSongs] = useState<SongProps[]>([]);
   const [selectedMusicId, setSelectedMusicId] = useState<number | null>(null);
 
   const handleMusicClick = (music: SongProps) => {
@@ -31,22 +31,24 @@ export default function Player() {
   };
 
   const { id } = useParams();
+  let currentSongs;
 
   const getPlaylistData = useCallback(async () => {
-    const { data } = await axios.get(`http://localhost:3000/playlist/${id}`)
-    if(data.userId) setIsUserPlaylist(true)
-
-    setPlaylist(data)
+    let { data } = await axios.get(`http://localhost:3000/playlist/${id}`)
+    if (data.userId) setIsUserPlaylist(true)
+    setPlaylist(data);
+    currentSongs = await axios.get('http://localhost:3000/music?name=Anyware')
+    setSongs(currentSongs.data);
+    console.log(currentSongs);
   }, [id])
 
   const deleteMusicFromPlaylist = async (musicId: number) => {
     const currentSongs = playlist?.songs.filter(song => song.id !== musicId)
-    
+
     await axios.put(`http://localhost:3000/playlist/${id}`, {
       ...playlist,
       songs: currentSongs
     })
-
     getPlaylistData()
   }
 
@@ -54,7 +56,7 @@ export default function Player() {
     getPlaylistData()
   }, [getPlaylistData])
 
-  const selectedMusic = playlist?.songs.find((musica: SongProps) => musica.id === selectedMusicId);
+  const selectedMusic = songs.find((musica: SongProps) => musica.id === selectedMusicId);
 
   return (
     <>
@@ -70,7 +72,7 @@ export default function Player() {
         </div>
         <div className="right-box">
           <ul className="song-list">
-            {playlist?.songs.map((musica: SongProps) => (
+            {songs && songs.map((musica: SongProps) => (
               <li
                 className={`song-item ${selectedMusicId === musica.id ? 'selected' : ''}`}
                 key={musica.id}
@@ -78,7 +80,6 @@ export default function Player() {
               >
                 <span className="song-number">{musica.id}.</span>
                 <span className="song-name">{musica.name}</span>
-                <span className="song-author">{musica.artist}</span>
                 {isUserPlaylist && <button className='bg-red-500 p-2 ml-3 rounded' onClick={() => deleteMusicFromPlaylist(musica.id)}>Excluir</button>}
               </li>
             ))}
@@ -88,8 +89,8 @@ export default function Player() {
       {selectedMusicId && selectedMusic && (
         <Music
           musicName={selectedMusic.name}
-          musicUrl={selectedMusic.file}
-          musicPicture={selectedMusic.capa}
+          musicUrl={selectedMusic.url}
+          musicPicture={selectedMusic.thumbnail}
         />
       )}
     </>
