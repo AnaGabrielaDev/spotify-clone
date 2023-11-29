@@ -15,19 +15,19 @@ interface Credentials {
 
 interface AuthContextProps {
   isAuthenticated: boolean
-  user: User
+  user: User | null
   signIn: (Credentials: Credentials) => Promise<{user: User | null, error?: unknown}>
   logout: () => Promise<void>
 }
 
 export const AuthContext = createContext({} as AuthContextProps)
 export const AuthContextProvider: React.FC<{children: ReactNode}> = ({ children }) => {
-  const [user, setUser] = useState({} as User);
+  const [user, setUser] = useState<User | null>({} as User);
   const isAuthenticated = !user;
 
   async function logout() {
     localStorage.removeItem('auth');
-    setUser({} as User);
+    setUser(null);
   }
 
   async function signIn({email, password}: Credentials) {

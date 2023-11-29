@@ -1,53 +1,48 @@
 import { useState } from 'react';
 import './style.css';
-import playlists from '../home/playlists.json';
 import { Header } from "../../components/Header";
 import { Logo } from "../../components/Logo";
-import axios from 'axios';
+import { backend } from '../../apis/backend';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function SearchMusic() {
+  const { user } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<{ name: string, capa: string, artist: string, id: number, file: string }[]>([]);
+  const [searchResults, setSearchResults] = useState<{ name: string, thumbnail: string, artist: string, id: number, file: string }[]>([]);
 
-  const handleSearch = (query: string) => {
-    const results: { name: string, capa: string, artist: string, id: number, file: string }[] = [];
-
-    playlists.forEach((playlist) => {
-      playlist.musicas.forEach((musica) => {
-        if (musica.nome.toLowerCase().includes(query.toLowerCase())) {
-          results.push({ name: musica.nome, capa: musica.capa, artist: musica.artista, id: musica.id, file: musica.arquivo });
-        }
-      });
-    });
+  const handleSearch = async (query: string) => {
+    const { data } = await backend.get('/music', {
+      params: {
+        name: query.toLowerCase()
+      }
+    })
 
     setSearchQuery(query);
-    setSearchResults(results.sort((a, b) => a.name.localeCompare(b.name)));
+    setSearchResults(data);
   };
 
   async function handleButtonClick(result: { name: string; artist: string; id: string}) {
-    console.log(result)
-    const {data: playlists} = await axios.get("http://localhost:3000/playlists")
-    const user = JSON.parse(localStorage.getItem("loggedUser") as string)
+    const {data: playlists} = await backend.get("/playlist")
     const playlist = playlists.find((play) => {
-      return play.userId == user.id
+      return play.userId == user!.id
     })
 
     if(!playlist) {
       const playlist = {
-        "userId": user.id,
+        "userId": user!.id,
         "title": "Minha Playlist",
         "description": "Playlist pessoal",
         "img": "/img/intense_studying.jpg",
         "songs": [result]
       }
-      await axios.post("http://localhost:3000/playlists", playlist)
+
+      await backend.post("/playlist", playlist)
     } else {
-      playlist.songs.push(result)
-      await axios.put(`http://localhost:3000/playlists/${playlist.id}`, playlist)
+      await backend.patch(`/playlist/${playlist.id}/add`, {
+        musicId: result.id
+      })
     }
   }
-
-   
 
   return (
     <>
@@ -73,7 +68,7 @@ export default function SearchMusic() {
             searchResults.map((result, index) => (
               <li key={index} className="result-item">
                 <img
-                  src={result.capa}
+                  src={result.thumbnail}
                   alt={result.name}
                   className="music-cover"
                 />

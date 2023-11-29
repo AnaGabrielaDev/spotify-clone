@@ -5,6 +5,7 @@ import { Logo } from "../../components/Logo";
 import "./style.css";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { backend } from '../../apis/backend';
 
 interface SongProps {
   "id": number,
@@ -34,10 +35,10 @@ export default function Player() {
   let currentSongs;
 
   const getPlaylistData = useCallback(async () => {
-    let { data } = await axios.get(`http://localhost:3000/playlist/${id}`)
+    const { data } = await backend.get(`playlist/${id}`)
     if (data.userId) setIsUserPlaylist(true)
     setPlaylist(data);
-    currentSongs = await axios.get('http://localhost:3000/music?name=Anyware')
+    currentSongs = await backend.get('/music?name=Anyware')
     setSongs(currentSongs.data);
     console.log(currentSongs);
   }, [id])
@@ -45,7 +46,7 @@ export default function Player() {
   const deleteMusicFromPlaylist = async (musicId: number) => {
     const currentSongs = playlist?.songs.filter(song => song.id !== musicId)
 
-    await axios.put(`http://localhost:3000/playlist/${id}`, {
+    await backend.put(`/playlist/${id}`, {
       ...playlist,
       songs: currentSongs
     })

@@ -5,8 +5,8 @@ import { Logo } from "../../components/Logo";
 import Message from "../../components/Message/Message";
 
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { useForm } from "react-hook-form";
+import { backend } from "../../apis/backend";
 
 export function SignUp() {
   const [proceed, setProceed] = useState<boolean>(true);
@@ -27,7 +27,7 @@ export function SignUp() {
         birthdate: string,
         favGenres: string[],
     }
-    function createUser(ev: React.SyntheticEvent) {
+    async function createUser(ev: React.SyntheticEvent) {
       ev.preventDefault();
       const nickname = (document.querySelector("[name='nickname']") as HTMLInputElement).value;
       userData.push(nickname);
@@ -39,9 +39,7 @@ export function SignUp() {
         nickname: userData.shift() as string,
         favGenres: favorites
       }
-      axios.post('http://localhost:3000/users', user, {headers:{"Content-Type" : "application/json"}}).then(() => {
-        localStorage.setItem("loggedUser", JSON.stringify(user));
-      })
+      await backend.post('/users', user, {headers:{"Content-Type" : "application/json"}})
       setType('success');
       setMessage('Você foi cadastrado com sucesso! Redirecionando...');
       setTimeout(() => {
@@ -66,17 +64,11 @@ export function SignUp() {
         favorites.push(genre);
       }
     }
+
     function cancelPartialSubmit(ev: React.SyntheticEvent) {
       ev.preventDefault();
     }
-    // function testEmails() {
-    //     const email = (document.querySelector("[name='email']") as HTMLInputElement).value;
-    //     const confirmEmail = (document.querySelector("[name='confirmEmail']") as HTMLInputElement).value;
-    //     if (email != confirmEmail) {
-    //         setType('error');
-    //         setMessage('E-mails não coincidem!');
-    //     }
-    // }
+    
     return (
       <div className="bg-gradient-to-tl from-green-950 to-green-500 h-screen text-white">
         <Header.HeaderWrapper>
