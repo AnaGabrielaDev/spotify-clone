@@ -1,22 +1,37 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+
 
 export function Navigation() {
-    return (
-        <nav className="flex items-center mr-8 text-base">
-            <ul className="flex gap-9">
-                <li className="font-bold hover:text-green-500">Premium</li>
-                <Link to="/faq" replace={true}>
-                    <li className="font-bold hover:text-green-500">Suporte</li>
-                </Link>
-                <li className="font-bold hover:text-green-500">Baixar</li>
-                <li>|</li>
-                <Link to="/signUp" replace={true}>
-                    <li className="hover:text-green-500">Inscrever-se</li>
-                </Link>
-                <Link to="/login" replace={true}>
-                    <li className="hover:text-green-500">Entrar</li>
-                </Link>
-            </ul>
-        </nav>
-    )
+  const { user, logout } = useAuth()
+  return (
+    <nav className="flex items-center mr-8 text-base">
+      <ul className="flex gap-9">
+        <li className="font-bold hover:text-green-500">Premium</li>
+        <Link to="/faq" replace={true}>
+          <li className="font-bold hover:text-green-500">Suporte</li>
+        </Link>
+        <Link to="/search" replace={true}>
+          <li className="font-bold hover:text-green-500">Busca</li>
+        </Link>
+        <li className="font-bold hover:text-green-500">Baixar</li>
+        <li>|</li>
+        {user ?
+          <>
+            <li className="hover:text-green-500">Olá, {user.name}!</li>
+            <a className="hover:text-green-500 hover:click" onClick={logout}>Sair</a>
+          </>
+          :
+          <>
+            <Link to="/signUp" replace={true}>
+              <li className="hover:text-green-500">Inscrever-se</li>
+            </Link>
+            <Link to="/login" replace={true}>
+              <li className="hover:text-green-500">Entrar</li>
+            </Link>
+          </>
+        }
+      </ul>
+    </nav>
+  )
 }

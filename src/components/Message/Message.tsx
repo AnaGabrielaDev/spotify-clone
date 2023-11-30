@@ -4,33 +4,33 @@ import styles from './Message.module.css'
 
 function Message({type, text}: {type: string, text: string}) {
 
-    const [visible, setVisible] = useState(false)
-    useEffect(() => {
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
 
-        if (!text) {
-            setVisible(false)
-            return
-        }
+    if (!text) {
+      setVisible(false)
+      return
+    }
 
-        setVisible(true)
+    setVisible(true)
 
-        const timer = setTimeout(() => {
-            setVisible(false)
-        }, 3000)
+    const timer = setTimeout(() => {
+      setVisible(false)
+    }, 3000)
 
-        return () => clearTimeout(timer)
+    return () => clearTimeout(timer)
         
-    }, [text])
+  }, [text])
 
-    return ( 
-        <>
-            {visible && (
-                <div className={`${styles.message} ${styles[type]}`}>
-                <p>{text}</p> 
-            </div>
-            )}
-        </>
-    );
+  return ( 
+    <>
+      {visible && (
+        <div className={`${styles.message} ${styles[type]}`}>
+          <p>{text}</p> 
+        </div>
+      )}
+    </>
+  );
 }
 
 export default Message;

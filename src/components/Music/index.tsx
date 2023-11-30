@@ -11,8 +11,16 @@ export interface PlayerProps {
 export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [volume, setVolume] = useState(1); 
-  const audioRef = useRef(new Audio(musicUrl));
+  const [volume, setVolume] = useState(1);
+  const audio = new Audio(musicUrl)
+  audio.crossOrigin = 'anonymous';
+   
+  const audioRef = useRef(audio);
+
+  
+  const handleTimeUpdate = () => {
+    setCurrentTime(audioRef.current.currentTime);
+  };
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -21,16 +29,14 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
     audio.play();
     setIsPlaying(true);
 
-    const handleTimeUpdate = () => {
-      setCurrentTime(audio.currentTime);
-    };
-
     audio.addEventListener('timeupdate', handleTimeUpdate);
 
     return () => {
+      audio.pause();
+      audio.src = '';
       audio.removeEventListener('timeupdate', handleTimeUpdate);
     };
-  }, [musicUrl]); // Adicione musicUrl como dependência
+  }, [musicUrl]);
 
   
   const play = () => {
@@ -62,14 +68,14 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
     audio.volume = Number(e.target.value);
     setVolume(audio.volume);
   };
-  
+
   return (
     <div className="w-screen h-screen bottom-0">
       <div className="bg-zinc-900 w-full absolute bottom-0 flex flex-col">
         <input className="range accent-green-500" type="range" min="0" max={audioRef.current.duration} value={currentTime} onChange={handleTimeSliderChange} />
         <div className="items-center grid grid-cols-3">
           <div className="mx-12 flex items-center gap-4">
-            <img src={musicPicture} width={50} height={50} alt="image of player" style={{objectFit: "contain"}} />
+            <img crossOrigin="anonymous" src={musicPicture} width={50} height={50} alt="image of player" style={{objectFit: "contain"}} />
             <p className="text-lg">{musicName}</p>
           </div>
           <div className="flex justify-center">

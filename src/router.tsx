@@ -1,11 +1,13 @@
 import { Faq, Home, Login, SignUp, } from "./pages";
 import { createBrowserRouter } from "react-router-dom";
 import Player from "./pages/player";
+import SearchMusic from "./pages/search";
+import { RequireAuth } from "./components/RequiredAuth";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <RequireAuth><Home /></RequireAuth>,
   },
   {
     path: "/login",
@@ -22,5 +24,9 @@ export const router = createBrowserRouter([
   {
     path: "/player/:id",
     element: <Player/>
+  },
+  {
+    path: "/search",
+    element: <SearchMusic/>
   }
 ]);

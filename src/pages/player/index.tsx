@@ -1,40 +1,54 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Music } from "../../components/Music";
 import { Header } from "../../components/Header";
 import { Logo } from "../../components/Logo";
 import "./style.css";
-import playlists from "../home/playlists.json";
 import { useParams } from 'react-router-dom';
+import { backend } from '../../apis/backend';
 
-interface MusicItem {
-  id: number;
-  nome: string;
-  artista: string;
-  capa: string;
-  arquivo: string;
+interface SongProps {
+  "id": number,
+  "name": string,
+  "url": string,
+  "thumbnail": string
+}
+interface PlaylistProps {
+  name: string
+  thumbnail: string
+  musics: SongProps[]
 }
 
 export default function Player() {
-  const [selectedMusic, setSelectedMusic] = useState<MusicItem | null>(null);
-  const [audio, setAudio] = useState(new Audio());
+  const [isUserPlaylist, setIsUserPlaylist] = useState<boolean>(false)
+  const [playlist, setPlaylist] = useState<PlaylistProps>();
+  const [songs, setSongs] = useState<SongProps[]>([]);
+  const [selectedMusic, setSelectedMusic] = useState<SongProps | null>(null);
 
-  const handleMusicClick = (music: MusicItem) => {
-    if (selectedMusic === music) {
-      setSelectedMusic(null);
-      audio.pause();
-    } else {
-      setSelectedMusic(null);
-      audio.pause();
-      setSelectedMusic(music);
-      audio.src = music.arquivo;
-    }
-    setAudio(audio);
+  const handleMusicClick = (music: SongProps) => {
+    setSelectedMusic(music);
   };
 
   const { id } = useParams();
-  const playlistId = id ? parseInt(id) : 0;
-    
-  const playlist = playlists[playlistId - 1];
+  const getPlaylistData = useCallback(async () => {
+    const { data } = await backend.get(`playlist/${id}`)
+    if (data.userId) setIsUserPlaylist(true)
+    setPlaylist(data);
+    setSongs(data.musics);
+  }, [id])
+
+  const deleteMusicFromPlaylist = async (musicId: number) => {
+    await backend.patch(`/playlist/${id}/remove`, {
+      musicId
+    })
+
+    alert('Música removida com sucesso!')
+
+    getPlaylistData()
+  }
+
+  useEffect(() => {
+    getPlaylistData()
+  }, [getPlaylistData])
 
   return (
     <>
@@ -44,32 +58,36 @@ export default function Player() {
       </Header.HeaderWrapper>
       <div className="container">
         <div className="left-box-p">
-          <img className="playlist-image" src={playlist.capa} alt={playlist.titulo} />
-          <div className="playlist-title">{playlist.titulo}</div>
-          <div className="playlist-description">{playlist.descricao}</div>
+          <img crossOrigin="anonymous" className="playlist-image" src={playlist?.thumbnail} alt={playlist?.name} />
+          <div className="playlist-title">{playlist?.name}</div>
         </div>
         <div className="right-box">
           <ul className="song-list">
-            {playlist.musicas.map((musica: MusicItem) => (
+            {songs && songs.map((musica: SongProps) => (
               <li
-                className={`song-item ${selectedMusic === musica ? 'selected' : ''}`}
+                className={`song-item ${selectedMusic?.id === musica.id ? 'selected' : ''}`}
                 key={musica.id}
-                onClick={() => handleMusicClick(musica)}
               >
                 <span className="song-number">{musica.id}.</span>
-                <span className="song-name">{musica.nome}</span>
-                <span className="song-author">{musica.artista}</span>
+                <span 
+                  className="song-name" 
+                  onClick={() => handleMusicClick(musica)}
+                >{musica.name}</span>
+                {isUserPlaylist && <button className='bg-red-500 p-2 ml-3 rounded' onClick={() => deleteMusicFromPlaylist(musica.id)}>Excluir</button>}
               </li>
             ))}
           </ul>
         </div>
       </div>
       {selectedMusic && (
-        <Music
-          musicName={selectedMusic.nome}
-          musicUrl={selectedMusic.arquivo}
-          musicPicture={selectedMusic.capa}
-        />
+        <>
+          {console.log(selectedMusic)}
+          <Music
+            musicName={selectedMusic.name}
+            musicUrl={selectedMusic.url}
+            musicPicture={selectedMusic.thumbnail}
+          />
+        </>
       )}
     </>
   );

@@ -1,0 +1,206 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "a",
+      "email": "b",
+      "password": "",
+      "birthdate": "",
+      "nickname": "",
+      "favGenres": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "username": "b",
+      "email": "c",
+      "password": "1",
+      "birthdate": "1",
+      "nickname": "3",
+      "favGenres": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "username": "ba",
+      "email": "c3",
+      "password": "11",
+      "birthdate": "11",
+      "nickname": "a3",
+      "favGenres": [
+        "a",
+        "b"
+      ],
+      "id": 3
+    },
+    {
+      "username": "shinzou27",
+      "email": "felipecassianobarbosa@hotmail.com",
+      "password": "12345678",
+      "birthdate": "2003-08-10",
+      "nickname": "shinzou27",
+      "favGenres": [
+        "Rock",
+        "Pop"
+      ],
+      "id": 4
+    },
+    {
+      "username": "felipe",
+      "email": "felipecassianobarbosa@hotmail.com",
+      "password": "123",
+      "birthdate": "2003-08-10",
+      "nickname": "felipe",
+      "favGenres": [
+        "Rock",
+        "Heavy Metal",
+        "Eletrônica"
+      ],
+      "id": 5
+    },
+    {
+      "username": "aninha_gabrielah",
+      "email": "asdasdas@mail.com",
+      "password": "2411",
+      "birthdate": "2003-11-24",
+      "nickname": "aninha_gabrielah",
+      "favGenres": [
+        "Rap"
+      ],
+      "id": 6
+    }
+  ],
+  "customPlaylist": [
+    {
+      "userId": 6,
+      "title": "Minha Playlist",
+      "description": "Playlist pessoal",
+      "img": "/img/intense_studying.jpg",
+      "songs": [
+        {
+          "name": "Bird of Passage",
+          "capa": "/img-music/playlist_6/bird_of_passage.jpg",
+          "artist": "Carmelito"
+        },
+        {
+          "name": "body atlas",
+          "capa": "/img-music/playlist_9/body_atlas.jpg",
+          "artist": "Parker Son"
+        },
+        {
+          "name": "Las Grutas Blues",
+          "capa": "/img-music/playlist_10/las_grutas_blues.jpg",
+          "artist": "Atacustico"
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "playlists": [
+    {
+      "id": 1,
+      "title": "Intense Studying",
+      "description": "FirstPlaylist",
+      "img": "/img/intense_studying.jpg",
+      "songs": [
+        {
+          "id": 1,
+          "name": "Penumbra",
+          "artist": "Davignon",
+          "capa": "/img-music/playlist_1/penumbra.png",
+          "file": "/music/penumbra.mp3"
+        },
+        {
+          "id": 2,
+          "name": "June",
+          "artist": "André Dívou",
+          "capa": "/img-music/playlist_1/june.jpg",
+          "file": "/music/june.mp3"
+        },
+        {
+          "id": 3,
+          "name": "Stratus",
+          "artist": "Zoran Tudor",
+          "capa": "/img-music/playlist_1/stratus.jpg",
+          "file": "/music/stratus.mp3"
+        },
+        {
+          "id": 4,
+          "name": "No Goodbye",
+          "artist": "Jule Dubois",
+          "capa": "/img-music/playlist_1/no_goodbye.png",
+          "file": "/music/no_goodbye.mp3"
+        },
+        {
+          "id": 5,
+          "name": "Chacoaled Walls",
+          "artist": "Jean-Marie Bussiere",
+          "capa": "/img-music/playlist_1/charcoaled_walls.jpg",
+          "file": "/music/charcoaled_walls.mp3"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Jazz for Study",
+      "description": "Find your study focus with calm instrumental Jazz.",
+      "img": "/img/jazz_for_study.jpg",
+      "songs": [
+        {
+          "id": 1,
+          "name": "Breathe the Air",
+          "artist": "Glass Trio",
+          "capa": "/img-music/playlist_2/breathe_the_air.jpg",
+          "file": "/music/penumbra.mp3"
+        },
+        {
+          "id": 2,
+          "name": "Traveling Day",
+          "artist": "Arta Porting",
+          "capa": "/img-music/playlist_2/traveling_day.jpg",
+          "file": "/music/charcoaled_walls.mp3"
+        },
+        {
+          "id": 3,
+          "name": "A Bite-Sized Romance",
+          "artist": "6th Street Jazz",
+          "capa": "/img-music/playlist_2/a_bite-sized_romance.jpg",
+          "file": "/music/no_goodbye.mp3"
+        },
+        {
+          "id": 4,
+          "name": "Twenty Somethings",
+          "artist": "The Central Park North",
+          "capa": "/img-music/playlist_2/twenty_somethings.jpg",
+          "file": "/music/stratus.mp3"
+        },
+        {
+          "id": 5,
+          "name": "Sunset Stroll",
+          "artist": "Urban Jazz Junction",
+          "capa": "/img-music/playlist_2/sunset_stroll.png",
+          "file": "/music/music1.mp3"
+        }
+      ]
+    },
+    {
+      "userId": 6,
+      "title": "Minha Playlist",
+      "description": "Playlist pessoal",
+      "img": "/img/intense_studying.jpg",
+      "songs": [],
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "title": "Minha Playlist",
+      "description": "Playlist pessoal",
+      "img": "/img/intense_studying.jpg",
+      "songs": [],
+      "id": 4
+    }
+  ]
+}

@@ -7,11 +7,11 @@ interface HeaderWrapperInterface {
 }
 
 export function HeaderWrapper({children}: HeaderWrapperInterface) {
-    return (
-        <header className={twMerge("bg-zinc-900 text-white h-20 flex")}>
-            <div className="w-10/12 mx-auto flex justify-between items-center">
-                {children}
-            </div>
-        </header>
-    )
+  return (
+    <header className={twMerge("bg-zinc-900 text-white h-20 flex")}>
+      <div className="w-10/12 mx-auto flex justify-between items-center">
+        {children}
+      </div>
+    </header>
+  )
 }
