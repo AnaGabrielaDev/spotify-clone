@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
-
 
 export function Navigation() {
   const { user, logout } = useAuth()
+  const navigation = useNavigate()
+
+  function navigateToUserPage() {
+    if(!user) return
+    navigation(`/user/${user.id}`)
+  }
+
   return (
     <nav className="flex items-center mr-8 text-base">
       <ul className="flex gap-9">
@@ -18,7 +24,7 @@ export function Navigation() {
         <li>|</li>
         {user ?
           <>
-            <li className="hover:text-green-500">Olá, {user.name}!</li>
+            <li className="hover:text-green-500" onClick={() => navigateToUserPage()}>Olá, {user.name}!</li>
             <a className="hover:text-green-500 hover:click" onClick={logout}>Sair</a>
           </>
           :

@@ -18,6 +18,10 @@ export const router = createBrowserRouter([
     element: <SignUp/>,
   },
   {
+    path: "/user/:id",
+    element: <RequireAuth><SignUp /></RequireAuth>,
+  },
+  {
     path: "/faq",
     element: <Faq/>,
   },
