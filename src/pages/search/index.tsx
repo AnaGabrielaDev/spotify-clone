@@ -12,13 +12,19 @@ export default function SearchMusic() {
   const [searchResults, setSearchResults] = useState<{ name: string, thumbnail: string, id: number, file: string }[]>([]);
 
   const handleSearch = async (query: string) => {
+    setSearchQuery(query);
+
+
+    if(query.length < 1) {
+      setSearchResults([]);
+      return
+    }
+
     const { data } = await backend.get('/music', {
       params: {
         name: query.toLowerCase()
       }
     })
-
-    setSearchQuery(query);
     setSearchResults(data);
   };
 
