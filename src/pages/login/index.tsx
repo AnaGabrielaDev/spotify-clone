@@ -36,6 +36,7 @@ export function Login() {
         <Link to="/">
           <Logo />
         </Link>
+        <Header.Navigation />
       </Header.HeaderWrapper>
       {/* {message && <Message type={type} text={message} />} */}
       <Form.FormWrapper handleSubmit={handleSubmit(login)}>
