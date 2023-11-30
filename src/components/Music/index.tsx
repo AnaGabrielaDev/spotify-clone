@@ -11,8 +11,11 @@ export interface PlayerProps {
 export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [volume, setVolume] = useState(1); 
-  const audioRef = useRef(new Audio(musicUrl));
+  const [volume, setVolume] = useState(1);
+  const audio = new Audio(musicUrl)
+  audio.crossOrigin = 'anonymous';
+   
+  const audioRef = useRef(audio);
 
   
   const handleTimeUpdate = () => {
@@ -21,7 +24,6 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
 
   useEffect(() => {
     const audio = audioRef.current;
-    audio.crossOrigin = 'false';
 
     audio.src = musicUrl;
     audio.play();
@@ -34,7 +36,7 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
       audio.src = '';
       audio.removeEventListener('timeupdate', handleTimeUpdate);
     };
-  }, [musicUrl]); // Adicione musicUrl como dependência
+  }, [musicUrl]);
 
   
   const play = () => {
@@ -66,7 +68,7 @@ export function Music({ musicUrl, musicName, musicPicture }: PlayerProps) {
     audio.volume = Number(e.target.value);
     setVolume(audio.volume);
   };
-  
+
   return (
     <div className="w-screen h-screen bottom-0">
       <div className="bg-zinc-900 w-full absolute bottom-0 flex flex-col">
