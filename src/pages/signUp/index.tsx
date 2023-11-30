@@ -1,17 +1,21 @@
 import { Header } from "../../components/Header";
 import { Form } from "../../components/Form";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Logo } from "../../components/Logo";
 import Message from "../../components/Message/Message";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { backend } from "../../apis/backend";
+import { useAuth } from "../../hooks/useAuth";
 
 export function SignUp() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, setValue } = useForm();
+  const [isEdition, setIsEdition] = useState(false)
 
   const nav = useNavigate();
+  const { pathname } = useLocation()
+  const { user, logout } = useAuth()
 
   const [message, setMessage] = useState<string>();
   const [type, setType] = useState<string>('error');
@@ -24,18 +28,46 @@ export function SignUp() {
       return;
     }
 
-    await backend.post('/users', {
-      name: data.name,
-      email: data.email,
-      password: data.password
-    })
-    
-    setType('success');
-    setMessage('Você foi cadastrado com sucesso! Redirecionando...');
-    setTimeout(() => {
-      nav('/')  
-    }, 3000)
+    try{
+      if(isEdition) {
+        await backend.put(`/users`, {
+          name: data.name,
+          email: data.email,
+          password: data.password
+        })
+              
+        logout()
+      }else {
+        await backend.post('/users', {
+          name: data.name,
+          email: data.email,
+          password: data.password
+        })
+
+        setTimeout(() => {
+          nav('/')  
+        }, 3000)
+      }
+    }catch(err) {
+      setType('error');
+      setMessage(`Erro ao ${isEdition ? 'editar' : 'cadastrar'} usuário`);
+      return
+    }
   }
+
+  const editionLoader = useCallback(() => {
+    const userId = pathname.split('/')[1]
+    if(!userId) return false
+    if(!user) return false
+
+    setIsEdition(true)
+    setValue('name', user.name)
+    setValue('email', user.email)
+  }, [pathname, setValue, user])
+
+  useEffect(() => {
+    editionLoader()
+  }, [editionLoader])
     
   return (
     <div className="bg-gradient-to-tl from-green-950 to-green-500 h-screen text-white">
@@ -43,6 +75,7 @@ export function SignUp() {
         <Link to="/">
           <Logo />
         </Link>
+        {isEdition && <Header.Navigation />}
       </Header.HeaderWrapper>
       {message && <Message type={type} text={message}/>}
       <Form.FormWrapper handleSubmit={handleSubmit(createUser)}>
